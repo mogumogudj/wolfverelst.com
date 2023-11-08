@@ -33,11 +33,6 @@
     --SpaceGrotesk:'Space Grotesk', sans-serif;
 }
 
-html {
-    cursor: url("./images/flow-cursor.png");
-}
-
-
 body {
     margin: 0;
     padding: 0;
@@ -45,7 +40,7 @@ body {
     text-transform: lowercase;
     height: 100vh;
     margin: 0;
-
+    cursor: url('/images/flow-cursor.png');
 }
 
 .navbar {
@@ -62,11 +57,33 @@ body {
 }
 
 .logo img {
-    height: 100px;
+    height: 44px;
     width: 100%;
-    left: 120px;
+    left: 100px;
     position: relative;
-    background-color: var(--cream);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo img:hover {
+    transform: scale(1.2);
+} 
+
+#wolfverelst {
+    text-decoration: none; /* Remove underlines and decoration */
+    font-family: var(--SpaceGrotesk);
+    color: var(--deepCrimson); /* Set the text color to charcoal */
+    display: inline-block; /* Display it inline with the logo */
+    margin-left: -670px; /* Adjust the spacing between the logo and text */
+    font-size: 24px; /* Adjust the font size as needed */
+
+    /* Add a hover effect to change text color to mist */
+    transition: color 0.3s ease;
+}
+
+#wolfverelst:hover {
+    color: var(--raspberryRage); /* Change the text color to mist on hover */
+    cursor: pointer;
 }
 
 .nav-link {
@@ -183,7 +200,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 200px;
 }
 
 .sidebar-icons-left a {
@@ -193,6 +210,10 @@ body {
 .sidebar-icons-left i {
     font-size: 32px;
     color: var(--raspberryRage);
+}
+
+.sidebar-icons-left i:hover {
+    color: var(--deepCrimson);
 }
 
 .sidebar-text-left {
@@ -261,13 +282,15 @@ body {
 .image-container a {
     text-decoration: none; /* Remove underlines from links */
     display: block;
-    margin: 10px 0; /* Adjust this value for spacing */
+    margin: 10px; /* Adjust this value for spacing */
     transition: transform 0.5s ease; /* Smooth transition effect */
 }
 
 .image-container a img {
     max-width: 80px; /* Adjust the maximum width as needed */
-    height: auto;
+    border-radius: 75%;
+    width: 80px;
+    height: 80px;
 }
 
 .image-container a:hover {

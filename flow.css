@@ -297,12 +297,12 @@ body {
 }
 
 .main-title {
-    font-size: 64px;
-    color: var(--raspberryRage);
+    font-size: 32px;
+    color: var(--charcoal);
 }
 
 .sub-title {
-    font-size: 36px;
+    font-size: 64px;
     color: var(--deepCrimson);
 }
 
@@ -320,7 +320,7 @@ body {
 }
 
 .arrow i{
-    margin-top: 280px;
+    margin-top: 180px;
     margin-left : -168px;
     font-size: 40px;
     padding: 24px;
@@ -340,4 +340,17 @@ body {
 .landing-page {
     border-bottom: 1px solid var(--mist);
     padding-bottom: 44px;
+}
+
+span {
+    background-color: var(--raspberryRage);
+    color: var(--cream);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+span:hover {
+    background-color: var(--deepCrimson);
+    color: var(--cream);
+    cursor: crosshair;
 }

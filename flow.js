@@ -38,3 +38,8 @@ function scrollImages() {
 }
 
 setInterval(scrollImages, 2000); // Adjust the interval to control scrolling speed
+
+
+
+
+

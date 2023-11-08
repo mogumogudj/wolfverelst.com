@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOLF VER ELST</title>
+    <title>wolf ver elst - portfolio</title>
     <link rel="stylesheet" href="/flow.css">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+
 
 </head>
 <body>
@@ -73,5 +76,14 @@
     </div>
 
 </body>
+<script>
+    document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        document.title = 'hey! come back!';
+    } else {
+        document.title = 'wolf ver elst - portfolio';
+    }
+});
+</script>
 <script src="../flow.js"></script>
 </html>

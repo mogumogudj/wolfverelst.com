@@ -196,10 +196,11 @@ body {
 }
 
 .image-container {
-    animation: scroll 60s linear infinite; /* Adjust the duration as needed */
+    animation: scroll 10s linear infinite;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    z-index: 3;
 }
 
 @keyframes scroll {
@@ -237,6 +238,8 @@ body {
     margin-left: 180px;
     margin-top: 100px;
     font-family: var(--SpaceGrotesk);
+    z-index: 2;
+    /* background-color: red; */
 }
 
 .main-title, .sub-title, .paragraph {
@@ -304,7 +307,7 @@ body {
 
 .landing-page {
     position: relative;
-    z-index: 0;
+    z-index: -5;
     border-bottom: 1px solid var(--mist);
     padding-bottom: 30vh;
 }
@@ -352,39 +355,39 @@ span {
         <div class="sidebar-projects">
             <div class="image-container">
                 <a href="#"><img src="/images/banner-first.png" alt=""></a>
-                <a href=""><img src="/images/banner-top.png" alt=""></a>
+                <a href="#"><img src="/images/banner-top.png" alt=""></a>
                 <a href="#"><img src="/images/brandbookmockup.png" alt=""></a>
                 <a href="#"><img src="/images/flower.png" alt=""></a>
 
                 <a href="#"><img src="/images/banner-first.png" alt=""></a>
-                <a href=""><img src="/images/banner-top.png" alt=""></a>
+                <a href="#"><img src="/images/banner-top.png" alt=""></a>
                 <a href="#"><img src="/images/brandbookmockup.png" alt=""></a>
                 <a href="#"><img src="/images/flower.png" alt=""></a>
 
                 <a href="#"><img src="/images/banner-first.png" alt=""></a>
-                <a href=""><img src="/images/banner-top.png" alt=""></a>
+                <a href="#"><img src="/images/banner-top.png" alt=""></a>
                 <a href="#"><img src="/images/brandbookmockup.png" alt=""></a>
                 <a href="#"><img src="/images/flower.png" alt=""></a>
 
                 <a href="#"><img src="/images/banner-first.png" alt=""></a>
-                <a href=""><img src="/images/banner-top.png" alt=""></a>
+                <a href="#"><img src="/images/banner-top.png" alt=""></a>
                 <a href="#"><img src="/images/brandbookmockup.png" alt=""></a>
                 <a href="#"><img src="/images/flower.png" alt=""></a>
 
                 <a href="#"><img src="/images/banner-first.png" alt=""></a>
-                <a href=""><img src="/images/banner-top.png" alt=""></a>
+                <a href="#"><img src="/images/banner-top.png" alt=""></a>
                 <a href="#"><img src="/images/brandbookmockup.png" alt=""></a>
                 <a href="#"><img src="/images/flower.png" alt=""></a>
 
                 <a href="#"><img src="/images/banner-first.png" alt=""></a>
-                <a href=""><img src="/images/banner-top.png" alt=""></a>
+                <a href="#"><img src="/images/banner-top.png" alt=""></a>
                 <a href="#"><img src="/images/brandbookmockup.png" alt=""></a>
                 <a href="#"><img src="/images/flower.png" alt=""></a>
             </div>
         </div>
     </div>
 
-<section class="landing-page">
+<div class="landing-page">
     <div class="content">
         <h1 class="main-title">A creative, happy and dynamic designer</h1>
         <h2 class="sub-title">Super smooth, with a touch of <span>pink mayo</span></h2>
@@ -398,7 +401,7 @@ span {
         <a href="#"><i class="fa-solid fa-arrow-down"></i></a>
     </div>
 
-</section>
+</div>
 
 </body>
 <script>

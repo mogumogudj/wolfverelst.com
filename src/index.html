@@ -233,6 +233,7 @@ a {
 .image-container a img {
     max-width: 80px; /* Adjust the maximum width as needed */
     border-radius: 75%;
+    object-fit: cover;
     width: 80px;
     height: 80px;
 }
@@ -245,6 +246,7 @@ a {
 
 
 .content {
+    position: relative;
     width: 40%;
     margin-left: 180px;
     margin-top: 100px;
@@ -320,8 +322,6 @@ a {
 .landing-page {
     position: relative;
     z-index: -5;
-    border-bottom: 1px solid var(--mist);
-    padding-bottom: 30vh;
 }
 
 span {
@@ -345,7 +345,19 @@ span {
             }
 
             .sidebar-right {
-                height: 30vh;;
+                height: 30vh;
+                width: 400px;;
+            }
+
+            .landing-page .content {
+                width: 60%;
+                margin-left: 100px;
+                margin-top: 300px;
+                height: 200px;
+            }
+
+            .landing-page .content hr {
+                display: none;
             }
 
         }

@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="/flow.css">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="/src/images/favicon.png" type="image/png">
-    <link rel="shortcut icon" href="/src/images/favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -87,12 +87,16 @@ a {
 } 
 
 #wolfverelst {
-    text-decoration: none; /* Remove underlines and decoration */
-    font-family: var(--SpaceGrotesk);
-    color: var(--deepCrimson); /* Set the text color to charcoal */
-    display: inline-block; /* Display it inline with the logo */
-    margin-left: -240px; /* Adjust the spacing between the logo and text */
-    font-size: 24px; /* Adjust the font size as needed */
+            position: absolute;
+            text-decoration: none;
+            font-family: var(--SpaceGrotesk);
+            color: var(--deepCrimson);
+            font-size: 24px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            margin-left: 80px;
+            
+
 
     /* Add a hover effect to change text color to mist */
     transition: color 0.3s ease;
@@ -102,6 +106,8 @@ a {
     color: var(--raspberryRage); /* Change the text color to mist on hover */
     cursor: pointer;
 }
+
+
 
 .nav-link {
     text-decoration: none;
@@ -227,6 +233,7 @@ a {
 .image-container a img {
     max-width: 80px; /* Adjust the maximum width as needed */
     border-radius: 75%;
+    object-fit: cover;
     width: 80px;
     height: 80px;
 }
@@ -239,6 +246,7 @@ a {
 
 
 .content {
+    position: relative;
     width: 40%;
     margin-left: 180px;
     margin-top: 100px;
@@ -314,8 +322,6 @@ a {
 .landing-page {
     position: relative;
     z-index: -5;
-    border-bottom: 1px solid var(--mist);
-    padding-bottom: 30vh;
 }
 
 span {
@@ -329,37 +335,37 @@ span {
 
 
 
-.mosaic {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px; /* Adjust the gap as needed */
-    margin-top: 200px; /* Increase the top margin to add more space */
-    margin-left: 180px;
-}
 
-.mosaic-item {
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
 
-.mosaic-item img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 
-.mosaic-item:hover {
-    transform: scale(1.1);
-}
+@media only screen and (max-width: 768px) {
+            #wolfverelst {
+                margin-left: 80px;
+                font-size: 18px;
+            }
 
+            .sidebar-right {
+                height: 30vh;
+                width: 400px;;
+            }
+
+            .landing-page .content {
+                width: 60%;
+                margin-left: 100px;
+                margin-top: 300px;
+                height: 200px;
+            }
+
+            .landing-page .content hr {
+                display: none;
+            }
+
+        }
     </style>
 
 </head>
 <body>
     <div class="navbar">
-        <a href="/src/index.html" class="logo"><img src="/src/images/favicon.png" alt="flow logo"></a>
         <h1 id="wolfverelst">Wolf Ver Elst</h1>
         <!-- <a href="/src/index.html" class="nav-link">Home</a>
         <a href="/src/my-work.html" class="nav-link">My Work</a>
@@ -390,57 +396,47 @@ span {
     <div class="sidebar-right">
         <div class="sidebar-projects">
             <div class="image-container">
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
 
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
 
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
 
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
 
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="/src/projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
+
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-first.png" alt="banner-first"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/banner-top.png" alt="banner-top"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/brandbookmockup.png" alt="brandbook-mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/flower.png" alt="flower"></a>
             </div>
         </div>
     </div>
 
 <div class="landing-page">
     <div class="content">
-        <h1 class="main-title">Hello</h1>
-        <h2 class="sub-title">This page is <span>under construction</span></h2>
-        <p class="paragraph">I like</p>
+        <h1 class="main-title">A creative, happy and dynamic designer</h1>
+        <h2 class="sub-title">Super smooth, with a touch of <span>pink mayo</span></h2>
+        <p class="paragraph">Graphic design with a captivating blend of creativity and precision. The art of visual communication, where colors, typography and images come together to convey powerfull messages.</p>
         <!-- <a href="#" class="button">Get in touch</a> -->
         <hr class="divider">
     </div>
-
-
-
-    <!-- Mosaic Section -->
-    <div class="mosaic">
-        <div class="mosaic-item">
-            <a href="#">
-                <img src="/src/images/brandbookmockup.png" alt="Project 1">
-            </a>
-        </div>
-        <div class="mosaic-item">
-            <a href="#">
-                <img src="/src/images/brandbookmockup.png" alt="Project 2">
-            </a>
-        </div>
 
 
     <!-- <div class="arrow">

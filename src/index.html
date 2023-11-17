@@ -87,14 +87,15 @@ a {
 } 
 
 #wolfverelst {
+            position: absolute;
             text-decoration: none;
             font-family: var(--SpaceGrotesk);
             color: var(--deepCrimson);
-            display: inline-block;
             font-size: 24px;
             transition: color 0.3s ease;
             cursor: pointer;
-            margin-right: 20px;
+            margin-left: 80px;
+            
 
 
     /* Add a hover effect to change text color to mist */
@@ -339,20 +340,16 @@ span {
 
 @media only screen and (max-width: 768px) {
             #wolfverelst {
-                margin-left: 20px;
+                margin-left: 80px;
                 font-size: 18px;
             }
 
-            .logo img {
-                display: none;
-            }
         }
     </style>
 
 </head>
 <body>
     <div class="navbar">
-        <a href="/src/index.html" class="logo"><img src="images/favicon.png" alt="flow logo"></a>
         <h1 id="wolfverelst">Wolf Ver Elst</h1>
         <!-- <a href="/src/index.html" class="nav-link">Home</a>
         <a href="/src/my-work.html" class="nav-link">My Work</a>

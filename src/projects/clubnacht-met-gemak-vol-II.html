@@ -61,8 +61,10 @@ a {
 }
 
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     background-color: var(--cream);
     display: flex;
     justify-content: space-between;
@@ -117,6 +119,7 @@ a {
     font-size: 20px;
     font-family: var(--SpaceGrotesk);
     position: relative;
+
 }
 
 .nav-contact .nav-link {
@@ -126,7 +129,7 @@ a {
     padding: 18px 40px;
     position: relative;
     margin-left: auto;
-    left: 30px;
+    right: -9px;
     cursor: pointer;
 }
 
@@ -249,7 +252,7 @@ a {
     position: relative;
     width: 40%;
     margin-left: 180px;
-    margin-top: 100px;
+    margin-top: 164px;
     font-family: var(--SpaceGrotesk);
     z-index: 2;
     /* background-color: red; */
@@ -334,6 +337,28 @@ span {
 
 
 
+.work-showcase {
+    position: relative;
+    width: 60%;
+    display: flex;
+    padding: 100px 8%;
+    margin-left: 96px;
+    margin-top: 200px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-left: -30px;
+}
+
+.gallery img {
+    width: 100%;
+}
+
+
+
 
 
 
@@ -352,7 +377,7 @@ span {
             .landing-page .content {
                 width: 60%;
                 margin-left: 100px;
-                margin-top: 300px;
+                margin-top: 348px;
                 height: 200px;
             }
 
@@ -362,6 +387,10 @@ span {
 
             .sidebar-right .image-container {
                 flex-direction: column;
+            }
+
+            .work-showcase {
+                margin-left: 112px;
             }
 
         }
@@ -440,6 +469,19 @@ span {
         <p class="paragraph">Graphic design with a captivating blend of creativity and precision. The art of visual communication, where colors, typography and images come together to convey powerfull messages.</p>
         <!-- <a href="#" class="button">Get in touch</a> -->
         <hr class="divider">
+    </div>
+
+    <div class="work-showcase">
+        <div class="gallery">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+            <img src="/src/images/brandbookmockup.png" alt="brandbook">
+        </div>
     </div>
 
 

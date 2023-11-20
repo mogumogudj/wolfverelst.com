@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wolf ver elst - portfolio</title>
+    <link rel="stylesheet" href="/flow.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="/src/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/src/images/favicon.png" type="image/png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* colors */
+    /* primary colors */
+    --cream: #f5f5dd;
+    --raspberryRage: #991b1e;
+
+    /* secondary colors */
+    --blueberryBliss: #255f85;
+    --honeyMustard: #ffd95a;
+    --chiliPepper: #e4242a;
+
+    /* semantic colors */
+    --enchantedEmerald: #8ac653;
+    --caramelApricot: #f8993a;
+    --rosyCoral: #f26969;
+    --cottonCandy: #f499c0;
+
+    /* neutral colors */
+    --charcoal: #444445;
+    --black: #000000;
+    --white: #ffffff;
+
+    /* recommended tints */
+    --deepCrimson: #550000;
+    --mist: #CCCCCC;
+    --stormCloud: #999999;
+    --quartz: #ececec;
+
+
+    /* typography */
+    --SpaceGrotesk:'Space Grotesk', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
+    text-transform: lowercase;
+    height: 100vh;
+    margin: 0;
+    cursor: url('/images/flow-cursor.png');
+}
+
+a {
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cream);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border-bottom: 1px solid var(--mist);
+    z-index: 2;
+    height: 60px;
+}
+
+.logo img {
+    height: 44px;
+    width: 100%;
+    left: 100px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo img:hover {
+    transform: scale(1.2);
+} 
+
+#wolfverelst {
+            position: absolute;
+            text-decoration: none;
+            font-family: var(--SpaceGrotesk);
+            color: var(--deepCrimson);
+            font-size: 24px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            font-weight: 900;
+            margin-left: 80px;
+            
+
+
+    /* Add a hover effect to change text color to mist */
+    transition: color 0.3s ease;
+}
+
+#wolfverelst:hover {
+    color: var(--raspberryRage); /* Change the text color to mist on hover */
+    cursor: pointer;
+}
+
+#toggleSidebar {
+    display: none;
+    font-size: 16px;
+    margin-left: 212px; /* Adjusted margin */
+    cursor: pointer;
+    font-family: var(--SpaceGrotesk);
+    color: var(--deepCrimson);
+}
+
+#toggleSidebar:hover {
+    color: var(--raspberryRage);
+}
+
+
+
+.nav-link {
+    text-decoration: none;
+    color: var(--cream);
+    background-color: var(--raspberryRage);
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: var(--SpaceGrotesk);
+    position: relative;
+
+}
+
+.nav-contact .nav-link {
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 18px 40px;
+    position: relative;
+    margin-left: auto;
+    right: -9px;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: var(--cream);
+    background-color: var(--deepCrimson);
+}
+
+
+
+
+
+
+
+
+/* sidebar ⬅️ */ 
+.sidebar-left {
+    position: fixed;
+    top: 0;
+    width: 60px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: var(--cream);
+    padding: 4px;
+    border-right: 1px solid var(--mist);
+    z-index: 2;
+}
+
+.sidebar-icons-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.sidebar-icons-left a {
+    margin-bottom: 60px;
+}
+
+.sidebar-icons-left i {
+    font-size: 32px;
+    color: var(--raspberryRage);
+}
+
+.sidebar-icons-left i:hover {
+    color: var(--deepCrimson);
+}
+
+.sidebar-text-left {
+    text-align: center;
+    font-family: var(--SpaceGrotesk);
+    font-size: 16px;
+    color: var(--charcoal);
+}
+
+
+
+
+/* sidebar ➡️ */
+.sidebar-right {
+    position: fixed;
+    top: 60px;
+    width: 200px;
+    height: 60vh;
+    background-color: var(--cream);
+    padding: 16px;
+    border-left: 1px solid var(--mist);
+    border-bottom: 1px solid var(--mist);
+    right: 0;
+    overflow: hidden; 
+    z-index: 0;
+}
+
+.sidebar-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adjust this value for spacing */
+}
+
+.image-container {
+    animation: scroll 10s linear infinite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(-30%);
+    }
+    100% {
+        transform: translateY(-50%); /* Move the images upward by the container height */
+    }
+}
+
+.image-container a {
+    text-decoration: none; /* Remove underlines from links */
+    display: block;
+    margin: 10px; /* Adjust this value for spacing */
+    transition: transform 0.5s ease; /* Smooth transition effect */
+}
+
+.image-container a img {
+    max-width: 80px; /* Adjust the maximum width as needed */
+    border-radius: 75%;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+}
+
+.image-container a:hover {
+    transform: scale(1.1); /* Increase image size on hover */
+    transform: rotate(12deg);
+    filter: brightness(0.8);
+}
+
+
+
+.content {
+    position: relative;
+    width: 40%;
+    margin-left: 180px;
+    margin-top: 164px;
+    font-family: var(--SpaceGrotesk);
+    z-index: 2;
+    /* background-color: red; */
+}
+
+.main-title, .sub-title, .paragraph {
+    text-align: left;
+}
+
+.main-title {
+    font-size: 24px;
+    color: var(--charcoal);
+}
+
+.sub-title {
+    font-size: 36px;
+    color: var(--deepCrimson);
+}
+
+.paragraph {
+    color: var(--charcoal);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* .button {
+    text-decoration: none;
+    color: var(--deepCrimson);
+    border: 1px solid var(--deepCrimson);
+    background-color: var(--cream);
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.button:hover {
+    color: var(--cream);
+    border: 1px solid var(--raspberryRage);
+    background-color: var(--raspberryRage);
+
+} */
+
+.landing-page .content hr {
+    color: var(--charcoal);
+    width: 40%;
+    float: left;
+    margin-top: 40px;
+}
+
+/* .arrow i{
+    position: absolute;
+    margin-top: 68px;
+    left: calc(180px);
+    font-size: 40px;
+    padding: 24px;
+    border-radius: 50%;
+    color: var(--cream);
+    background-color: var(--raspberryRage);
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    justify-content: center;
+}
+
+.arrow i:hover {
+    background-color: var(--deepCrimson);
+} */
+
+.landing-page {
+    position: relative;
+    z-index: -5;
+}
+
+span {
+    background-color: var(--raspberryRage);
+    color: var(--cream);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+
+
+.work-showcase {
+    position: relative;
+    width: 60%;
+    display: flex;
+    padding: 100px 8%;
+    margin-left: 96px;
+    margin-top: 200px;
+
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery img {
+    width: 100%;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+            #wolfverelst {
+                margin-left: 80px;
+                font-size: 18px;
+            }
+
+            #toggleSidebar {
+                display: block;
+            }
+
+            .sidebar-right {
+                display: none; /* Hide sidebar by default on smaller screens */
+                position: fixed;
+                top: 60px;
+                width: 200px;
+                height: 60vh;
+                background-color: var(--cream);
+                padding: 16px;
+                border-left: 1px solid var(--mist);
+                border-bottom: 1px solid var(--mist);
+                right: 0;
+                overflow: hidden; 
+                z-index: 0;
+            }
+
+            .sidebar-right.show-sidebar {
+                display: block;
+            }
+
+            .landing-page .content {
+                width: 60%;
+                margin-left: 100px;
+                margin-top: 120px;
+            }
+
+            .landing-page .content hr {
+                display: none;
+            }
+
+            .sidebar-right .image-container {
+                flex-direction: column;
+            }
+
+            .work-showcase {
+                margin-left: auto;
+        margin-right: auto;
+            }
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="navbar">
+        <a href="/src/index.html" id="wolfverelst">Wolf Ver Elst</a>
+        <a id="toggleSidebar">Projects</a>
+        <!-- <a href="/src/index.html" class="nav-link">Home</a>
+        <a href="/src/my-work.html" class="nav-link">My Work</a>
+        <a href="/src/about.html" class="nav-link">About</a> -->
+        <div class="vertical-line"></div>
+        <div class="nav-contact">
+            <a class="nav-link" onclick="location.href='mailto:wolfverelst@gmail.com';" target="_blank">Contact</a>
+
+        </div>
+    </div>
+
+
+    
+
+
+    <div class="sidebar-left">
+        <div class="sidebar-icons-left">
+           <a href="https://www.instagram.com/wolfverelst/" target="_blank"><i class="fa-brands fa-instagram fa-2xl" id="sidebar-left-instagram-icon"></i></a>
+           <a href="https://www.linkedin.com/in/wolfverelst/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl" id="sidebar-left-linkedin-icon"></i></a>
+           <a onclick="location.href='mailto:wolfverelst@gmail.com';" target="_blank"><i class="fa-regular fa-envelope fa-2xl" id="sidebar-left-email-icon"></i></a>
+        </div>
+        <div class="sidebar-text-left">
+            <p>&copy; Wolf Ver Elst 2023</p>
+        </div>
+    </div>
+
+
+    <div class="sidebar-right">
+        <div class="sidebar-projects">
+            <div class="image-container">
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.I/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!sessions/gemak-sessions-post-final.png" alt="Gemak! Sessions Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearl-sticker-v4-white.png" alt="Pearl White Sticker Design"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!-identity/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/clubnacht-met-gemak-instagram_post.png" alt="Clubnacht met gemak! (Vol. I) Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!sessions/riet-gemaksessions-final.png" alt="Gemak! Sessions Artist Announcement"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearlVintageStore-logo-white.png" alt="Pearl Vintage Store Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/gemak!-t-shirt.jpg" alt="Gemak! T-shirt"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.I/banner-instagram-post.png" alt="Clubnacht met gemak! (Vol. I) Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/lighter-design.jpg" alt="Gemak! Lighter Design"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearl-sticker-v4-black.png" alt="Pearl Black Sticker Design"></a>
+
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.I/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!sessions/gemak-sessions-post-final.png" alt="Gemak! Sessions Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearl-sticker-v4-white.png" alt="Pearl White Sticker Design"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!-identity/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/clubnacht-met-gemak-instagram_post.png" alt="Clubnacht met gemak! (Vol. I) Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!sessions/riet-gemaksessions-final.png" alt="Gemak! Sessions Artist Announcement"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearlVintageStore-logo-white.png" alt="Pearl Vintage Store Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/gemak!-t-shirt.jpg" alt="Gemak! T-shirt"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.I/banner-instagram-post.png" alt="Clubnacht met gemak! (Vol. I) Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/lighter-design.jpg" alt="Gemak! Lighter Design"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearl-sticker-v4-black.png" alt="Pearl Black Sticker Design"></a>
+
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.I/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!sessions/gemak-sessions-post-final.png" alt="Gemak! Sessions Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearl-sticker-v4-white.png" alt="Pearl White Sticker Design"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!-identity/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/clubnacht-met-gemak-instagram_post.png" alt="Clubnacht met gemak! (Vol. I) Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/gemak!sessions/riet-gemaksessions-final.png" alt="Gemak! Sessions Artist Announcement"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearlVintageStore-logo-white.png" alt="Pearl Vintage Store Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/gemak!-t-shirt.jpg" alt="Gemak! T-shirt"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.I/banner-instagram-post.png" alt="Clubnacht met gemak! (Vol. I) Banner"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/clubnacht-vol.II/lighter-design.jpg" alt="Gemak! Lighter Design"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="/src/images/pearl-vintage-store/pearl-sticker-v4-black.png" alt="Pearl Black Sticker Design"></a>
+            </div>
+        </div>
+    </div>
+
+<div class="landing-page">
+    <div class="content">
+        <h1 class="main-title">Discover 'Flow': Unleashing the Spirit of Wolf Ver Elst's Personal Brand Identity</h1>
+        <h2 class="sub-title">Navigating the Essence of <span>wolf ver elst</span></h2>
+        <p class="paragraph">'Flow' is not just a brand; it's a representation of the fluidity and harmony that Wolf brings to every endeavor. Just like a river effortlessly finding its course, 'Flow' captures the essence of adaptability and the seamless integration of various elements.</p>
+        <!-- <a href="#" class="button">Get in touch</a> -->
+        <hr class="divider">
+    </div>
+
+    <div class="work-showcase">
+        <div class="gallery">
+            <img src="/src/images/flow-brandbook/brandbookmockup.png" alt="Brandbook Mockup">
+            <img src="/src/images/flow-brandbook/3scherms.png" alt="Laptop Mockups">
+            <img src="/src/images/flow-brandbook/flower.png" alt="Flower Poster">
+            <img src="/src/images/flow-brandbook/totebag.png" alt="Totebag Mockup">
+            <img src="/src/images/flow-brandbook/t-shirt-woman.png" alt="T-shirt Mockup">
+            <img src="/src/images/flow-brandbook/flow-banner.png" alt="Shop Banner Mockup">
+        <video class="flow-video" width="100%" height="100%" autoplay loop muted>
+            <source src="/src/images/flow-brandbook/IMG_1933.MOV" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        </div>
+    </div>
+
+
+    <!-- <div class="arrow">
+        <a href="#"><i class="fa-solid fa-arrow-down"></i></a>
+    </div> -->
+
+</div>
+
+</body>
+<script>
+    document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        document.title = 'hey! come back!';
+    } else {
+        document.title = 'wolf ver elst - portfolio';
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+        const toggleSidebarButton = document.getElementById('toggleSidebar');
+        const sidebarRight = document.querySelector('.sidebar-right');
+
+        toggleSidebarButton.addEventListener('click', function () {
+            sidebarRight.classList.toggle('show-sidebar');
+        });
+    });
+</script>
+<script src="../flow.js"></script>
+</html>

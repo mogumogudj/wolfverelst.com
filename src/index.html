@@ -95,16 +95,25 @@ a {
             transition: color 0.3s ease;
             cursor: pointer;
             margin-left: 80px;
-            
-
-
-    /* Add a hover effect to change text color to mist */
-    transition: color 0.3s ease;
+            transition: color 0.3s ease;
 }
 
 #wolfverelst:hover {
     color: var(--raspberryRage); /* Change the text color to mist on hover */
     cursor: pointer;
+}
+
+#toggleSidebar {
+    display: none;
+    font-size: 16px;
+    margin-left: 212px; /* Adjusted margin */
+    cursor: pointer;
+    font-family: var(--SpaceGrotesk);
+    color: var(--deepCrimson);
+}
+
+#toggleSidebar:hover {
+    color: var(--raspberryRage);
 }
 
 
@@ -240,6 +249,7 @@ a {
 
 .image-container a:hover {
     transform: scale(1.1); /* Increase image size on hover */
+    transform: rotate(12deg);
     filter: brightness(0.8);
 }
 
@@ -338,22 +348,40 @@ span {
 
 
 
+
 @media only screen and (max-width: 768px) {
             #wolfverelst {
                 margin-left: 80px;
                 font-size: 18px;
             }
 
+            #toggleSidebar {
+                display: block;
+            }
+
             .sidebar-right {
-                height: 30vh;
-                width: 400px;;
+                display: none; /* Hide sidebar by default on smaller screens */
+                position: fixed;
+                top: 60px;
+                width: 200px;
+                height: 60vh;
+                background-color: var(--cream);
+                padding: 16px;
+                border-left: 1px solid var(--mist);
+                border-bottom: 1px solid var(--mist);
+                right: 0;
+                overflow: hidden; 
+                z-index: 0;
+            }
+
+            .sidebar-right.show-sidebar {
+                display: block;
             }
 
             .landing-page .content {
-                width: 60%;
+                width: 20%;
                 margin-left: 100px;
-                margin-top: 300px;
-                height: 200px;
+                margin-top: 60px;
             }
 
             .landing-page .content hr {
@@ -364,6 +392,7 @@ span {
                 flex-direction: column;
             }
 
+
         }
     </style>
 
@@ -371,6 +400,7 @@ span {
 <body>
     <div class="navbar">
         <h1 id="wolfverelst">Wolf Ver Elst</h1>
+        <a id="toggleSidebar">Projects</a>
         <!-- <a href="/src/index.html" class="nav-link">Home</a>
         <a href="/src/my-work.html" class="nav-link">My Work</a>
         <a href="/src/about.html" class="nav-link">About</a> -->
@@ -400,35 +430,30 @@ span {
     <div class="sidebar-right">
         <div class="sidebar-projects">
             <div class="image-container">
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="banner-first"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="banner-top"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flow-brandbook/brandbookmockup.png" alt="Brandbook Mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
 
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="banner-first"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="banner-top"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flow-brandbook/brandbookmockup.png" alt="Brandbook Mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
 
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="banner-first"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="banner-top"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flow-brandbook/brandbookmockup.png" alt="Brandbook Mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
 
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="banner-first"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="banner-top"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flow-brandbook/brandbookmockup.png" alt="Brandbook Mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
 
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="banner-first"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="banner-top"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flower.png" alt="flower"></a>
-
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="banner-first"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="banner-top"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/brandbookmockup.png" alt="brandbook-mockup"></a>
-                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flower.png" alt="flower"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/flow-brandbook/brandbookmockup.png" alt="Brandbook Mockup"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-top.png" alt="Clubnacht met gemak! (Vol. II) Poster"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/gemaklogo-ribbed.png" alt="gemak! Identity Logo"></a>
+                <a href="projects/clubnacht-met-gemak-vol-II.html"><img src="images/banner-first.png" alt="Clubnacht met gemak! (Vol. I) Poster"></a>
             </div>
         </div>
     </div>
@@ -458,6 +483,15 @@ span {
         document.title = 'wolf ver elst - portfolio';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+        const toggleSidebarButton = document.getElementById('toggleSidebar');
+        const sidebarRight = document.querySelector('.sidebar-right');
+
+        toggleSidebarButton.addEventListener('click', function () {
+            sidebarRight.classList.toggle('show-sidebar');
+        });
+    });
 </script>
 <script src="../flow.js"></script>
 </html>

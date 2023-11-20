@@ -109,6 +109,19 @@ a {
     cursor: pointer;
 }
 
+#toggleSidebar {
+    display: none;
+    font-size: 16px;
+    margin-left: 212px; /* Adjusted margin */
+    cursor: pointer;
+    font-family: var(--SpaceGrotesk);
+    color: var(--deepCrimson);
+}
+
+#toggleSidebar:hover {
+    color: var(--raspberryRage);
+}
+
 
 
 .nav-link {
@@ -370,16 +383,33 @@ span {
                 font-size: 18px;
             }
 
+            #toggleSidebar {
+                display: block;
+            }
+
             .sidebar-right {
-                height: 30vh;
-                width: 400px;;
+                display: none; /* Hide sidebar by default on smaller screens */
+                position: fixed;
+                top: 60px;
+                width: 200px;
+                height: 60vh;
+                background-color: var(--cream);
+                padding: 16px;
+                border-left: 1px solid var(--mist);
+                border-bottom: 1px solid var(--mist);
+                right: 0;
+                overflow: hidden; 
+                z-index: 0;
+            }
+
+            .sidebar-right.show-sidebar {
+                display: block;
             }
 
             .landing-page .content {
                 width: 60%;
                 margin-left: 100px;
-                margin-top: 348px;
-                height: 200px;
+                margin-top: 120px;
             }
 
             .landing-page .content hr {
@@ -392,6 +422,7 @@ span {
 
             .work-showcase {
                 margin-left: 112px;
+                margin-top: 0px;
             }
 
         }
@@ -401,6 +432,7 @@ span {
 <body>
     <div class="navbar">
         <h1 id="wolfverelst">Wolf Ver Elst</h1>
+        <a id="toggleSidebar">Projects</a>
         <!-- <a href="/src/index.html" class="nav-link">Home</a>
         <a href="/src/my-work.html" class="nav-link">My Work</a>
         <a href="/src/about.html" class="nav-link">About</a> -->
@@ -499,6 +531,15 @@ span {
         document.title = 'wolf ver elst - portfolio';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+        const toggleSidebarButton = document.getElementById('toggleSidebar');
+        const sidebarRight = document.querySelector('.sidebar-right');
+
+        toggleSidebarButton.addEventListener('click', function () {
+            sidebarRight.classList.toggle('show-sidebar');
+        });
+    });
 </script>
 <script src="../flow.js"></script>
 </html>

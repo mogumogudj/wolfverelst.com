@@ -523,22 +523,7 @@ span {
 
 </body>
 <script>
-    document.addEventListener('visibilitychange', function () {
-    if (document.hidden) {
-        document.title = 'hey! come back!';
-    } else {
-        document.title = 'wolf ver elst - portfolio';
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-        const toggleSidebarButton = document.getElementById('toggleSidebar');
-        const sidebarRight = document.querySelector('.sidebar-right');
-
-        toggleSidebarButton.addEventListener('click', function () {
-            sidebarRight.classList.toggle('show-sidebar');
-        });
-    });
+    document.addEventListener('visibilitychange',function(){document.title=document.hidden?'hey! come back!':'wolf ver elst - portfolio'}),document.addEventListener('DOMContentLoaded',function(){const t=document.getElementById('toggleSidebar'),e=document.querySelector('.sidebar-right');t.addEventListener('click',function(){e.classList.toggle('show-sidebar')})});
 </script>
 <script src="../flow.js"></script>
 </html>

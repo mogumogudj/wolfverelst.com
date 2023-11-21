@@ -25,4 +25,5 @@ const imageContainer = document.querySelector('.image-container'),
         imageContainer.appendChild(firstImage);
     };
 
-setInterval(scrollImages, 2000);
+setInterval(scrollImages, 20000);
+console.log(scrollImages);

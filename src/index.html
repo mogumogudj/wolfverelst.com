@@ -483,6 +483,21 @@ span {
 </body>
 <script>
     document.addEventListener('visibilitychange',function(){document.title=document.hidden?'hey! come back!':'wolf ver elst - portfolio'}),document.addEventListener('DOMContentLoaded',function(){const t=document.getElementById('toggleSidebar'),e=document.querySelector('.sidebar-right');t.addEventListener('click',function(){e.classList.toggle('show-sidebar')})});
+
+    function loadDeferredStyles() {
+            var addStylesNode = document.getElementById("deferred-styles");
+            var replacement = document.createElement("div");
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement);
+            addStylesNode.parentElement.removeChild(addStylesNode);
+        }
+
+        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) raf(function () {
+            window.setTimeout(loadDeferredStyles, 0);
+        });
+        else window.addEventListener('load', loadDeferredStyles);
 </script>
 <script src="flow.js"></script>
 </html>

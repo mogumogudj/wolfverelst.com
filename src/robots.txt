@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Disallow: /private/         # Blokkeert de /private/ map
+Disallow: /temp/            # Blokkeert de /temp/ map
+Disallow: /admin/           # Blokkeert de /admin/ map
+Disallow: /restricted-page/ # Blokkeert een specifieke pagina
+
+User-agent: Googlebot
+Disallow: /temp/            # Blokkeert de /temp/ map voor Googlebot

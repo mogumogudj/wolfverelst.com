@@ -94,7 +94,7 @@ a {
 #toggleSidebar {
     display: none;
     font-size: 16px;
-    margin-left: 212px; /* Adjusted margin */
+    margin-left: 212px;
     cursor: pointer;
     font-family: var(--SpaceGrotesk);
     color: var(--deepCrimson);
@@ -364,19 +364,6 @@ span {
     height: 60px;
 }
 
-#toggleSidebar {
-    display: none;
-    font-size: 16px;
-    margin-left: 212px; 
-    cursor: pointer;
-    font-family: var(--SpaceGrotesk);
-    color: var(--deepCrimson);
-}
-
-#toggleSidebar:hover {
-    color: var(--raspberryRage);
-}
-
 
 
 .nav-link {
@@ -450,14 +437,6 @@ span {
     font-family: var(--SpaceGrotesk);
     font-size: 16px;
     color: var(--charcoal);
-}
-
-
-.sidebar-projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
 }
 
 .image-container {

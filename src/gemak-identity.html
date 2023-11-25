@@ -1,35 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>wolf ver elst - portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-    <meta property="og:url" content="https://www.wolfverelst.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="wolf ver elst - portfolio">
-    <meta property="og:description" content="creative graphic designer">
-    <meta property="og:image" content="https://wolfverelst.com/wolfverelst.png"> 
-    
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="wolf ver elst - portfolio">
-    <meta name="twitter:description" content="creative graphic designer">
-    <meta name="twitter:image" content="https://wolfverelst.com/wolfverelst.png">
+    <meta property="og:url" content="https://www.wolfverelst.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="wolf ver elst - portfolio" />
+    <meta property="og:image" content="https://pearlvintagestore.com/wolfverelst.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:alt" content="wolf ver elst - portfolio background" />
+    <meta property="og:description" content="creative graphic designer" />
 
-    <meta name="description" content="Explore the creative world of Wolf Ver Elst, a dynamic and young graphic designer specializing in 3D design. Immerse yourself in a portfolio bursting with fresh, colorful, and fun creations. Experience the joy of design through dynamic and happy visual communication. Connect with Wolf for a vibrant journey into the world of creative expression.">
+
+
+<!-- Twitter Card tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="wolf ver elst - portfolio" />
+<meta name="twitter:description" content="creative graphic designer" />
+<meta name="twitter:image" content="https://pearlvintagestore.com/wolfverelst.png" />
+
+<meta name="robots" content="index, follow" />
+
+
+    <meta name="description" content="Explore the creative world of Wolf Ver Elst, a dynamic and young graphic designer specializing in 3D design. Immerse yourself in a portfolio bursting with fresh, colorful, and fun creations. Experience the joy of design through dynamic and happy visual communication. Connect with Wolf for a vibrant journey into the world of creative expression." />
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK11EX325Z"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D2Q87TKQBX"></script>
 <script>
+    
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YK11EX325Z');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D2Q87TKQBX');
 </script>
 
     <style>
@@ -120,22 +134,18 @@ a {
             cursor: pointer;
             font-weight: 900;
             margin-left: 80px;
-            
-
-
-    /* Add a hover effect to change text color to mist */
-    transition: color 0.3s ease;
+            transition: color 0.3s ease;
 }
 
 #wolfverelst:hover {
-    color: var(--raspberryRage); /* Change the text color to mist on hover */
+    color: var(--raspberryRage);
     cursor: pointer;
 }
 
 #toggleSidebar {
     display: none;
     font-size: 16px;
-    margin-left: 212px; /* Adjusted margin */
+    margin-left: 212px;
     cursor: pointer;
     font-family: var(--SpaceGrotesk);
     color: var(--deepCrimson);
@@ -185,7 +195,7 @@ a {
 .sidebar-left {
     position: fixed;
     top: 0;
-    width: 60px; /* Adjust the width as needed */
+    width: 60px;
     height: 100%;
     background-color: var(--cream);
     padding: 4px;
@@ -242,7 +252,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Adjust this value for spacing */
+    margin-top: 20px;
 }
 
 .image-container {
@@ -258,19 +268,19 @@ a {
         transform: translateY(-30%);
     }
     100% {
-        transform: translateY(-60%); /* Move the images upward by the container height */
+        transform: translateY(-60%);
     }
 }
 
 .image-container a {
-    text-decoration: none; /* Remove underlines from links */
+    text-decoration: none; 
     display: block;
-    margin: 10px; /* Adjust this value for spacing */
-    transition: transform 0.5s ease; /* Smooth transition effect */
+    margin: 10px;
+    transition: transform 0.5s ease;
 }
 
 .image-container a img {
-    max-width: 80px; /* Adjust the maximum width as needed */
+    max-width: 80px; 
     border-radius: 75%;
     object-fit: cover;
     width: 80px;
@@ -278,7 +288,7 @@ a {
 }
 
 .image-container a:hover {
-    transform: scale(1.1); /* Increase image size on hover */
+    transform: scale(1.1); 
     transform: rotate(12deg);
     filter: brightness(0.8);
 }
@@ -292,7 +302,6 @@ a {
     margin-top: 164px;
     font-family: var(--SpaceGrotesk);
     z-index: 2;
-    /* background-color: red; */
 }
 
 .main-title, .sub-title, .paragraph {
@@ -316,48 +325,12 @@ a {
     margin-bottom: 20px;
 }
 
-/* .button {
-    text-decoration: none;
-    color: var(--deepCrimson);
-    border: 1px solid var(--deepCrimson);
-    background-color: var(--cream);
-    padding: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.button:hover {
-    color: var(--cream);
-    border: 1px solid var(--raspberryRage);
-    background-color: var(--raspberryRage);
-
-} */
-
 .landing-page .content hr {
     color: var(--charcoal);
     width: 40%;
     float: left;
     margin-top: 40px;
 }
-
-/* .arrow i{
-    position: absolute;
-    margin-top: 68px;
-    left: calc(180px);
-    font-size: 40px;
-    padding: 24px;
-    border-radius: 50%;
-    color: var(--cream);
-    background-color: var(--raspberryRage);
-    width: 36px;
-    height: 36px;
-    text-align: center;
-    justify-content: center;
-}
-
-.arrow i:hover {
-    background-color: var(--deepCrimson);
-} */
 
 .landing-page {
     position: relative;
@@ -412,11 +385,11 @@ span {
             }
 
             .sidebar-right {
-                display: none; /* Hide sidebar by default on smaller screens */
+                display: none; 
                 position: fixed;
                 top: 60px;
                 width: 200px;
-                height: 60vh;
+                height: 100vh;
                 background-color: var(--cream);
                 padding: 16px;
                 border-left: 1px solid var(--mist);
@@ -457,9 +430,6 @@ span {
     <div class="navbar">
         <a href="index.html" id="wolfverelst">Wolf Ver Elst</a>
         <a id="toggleSidebar">Projects</a>
-        <!-- <a href="/src/index.html" class="nav-link">Home</a>
-        <a href="/src/my-work.html" class="nav-link">My Work</a>
-        <a href="/src/about.html" class="nav-link">About</a> -->
         <div class="vertical-line"></div>
         <div class="nav-contact">
             <a class="nav-link" href="mailto:wolfverelst@gmail.com">Contact</a>
@@ -535,12 +505,6 @@ span {
             <img src="images/clubnacht-vol.I/gemak!-dancefloor-logo.jpg" alt="Gemak! Identity Logo In The Club" loading="lazy">
         </div>
     </div>
-
-
-    <!-- <div class="arrow">
-        <a href="#"><i class="fa-solid fa-arrow-down"></i></a>
-    </div> -->
-
 </div>
 
 </body>

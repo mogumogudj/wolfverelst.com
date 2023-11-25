@@ -39,13 +39,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YK11EX325Z');
-
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-D2Q87TKQBX');
 </script>
 
@@ -140,7 +137,7 @@ a {
 }
 
 #wolfverelst:hover {
-    color: var(--raspberryRage); /* Change the text color to mist on hover */
+    color: var(--raspberryRage); 
     cursor: pointer;
 }
 
@@ -197,7 +194,7 @@ a {
 .sidebar-left {
     position: fixed;
     top: 0;
-    width: 60px; /* Adjust the width as needed */
+    width: 60px; 
     height: 100%;
     background-color: var(--cream);
     padding: 4px;
@@ -240,7 +237,7 @@ a {
     position: fixed;
     top: 60px;
     width: 200px;
-    height: 100vh;
+    height: 60vh;
     background-color: var(--cream);
     padding: 16px;
     border-left: 1px solid var(--mist);
@@ -254,7 +251,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Adjust this value for spacing */
+    margin-top: 20px; 
 }
 
 .image-container {
@@ -270,19 +267,19 @@ a {
         transform: translateY(-30%);
     }
     100% {
-        transform: translateY(-60%); /* Move the images upward by the container height */
+        transform: translateY(-60%);
     }
 }
 
 .image-container a {
-    text-decoration: none; /* Remove underlines from links */
+    text-decoration: none; 
     display: block;
-    margin: 10px; /* Adjust this value for spacing */
-    transition: transform 0.5s ease; /* Smooth transition effect */
+    margin: 10px;
+    transition: transform 0.5s ease; 
 }
 
 .image-container a img {
-    max-width: 80px; /* Adjust the maximum width as needed */
+    max-width: 80px;
     border-radius: 75%;
     object-fit: cover;
     width: 80px;
@@ -290,7 +287,7 @@ a {
 }
 
 .image-container a:hover {
-    transform: scale(1.1); /* Increase image size on hover */
+    transform: scale(1.1);
     transform: rotate(12deg);
     filter: brightness(0.8);
 }
@@ -304,7 +301,6 @@ a {
     margin-top: 100px;
     font-family: var(--SpaceGrotesk);
     z-index: 2;
-    /* background-color: red; */
 }
 
 .main-title, .sub-title, .paragraph {
@@ -328,43 +324,11 @@ a {
     margin-bottom: 20px;
 }
 
-/* .button {
-    text-decoration: none;
-    color: var(--deepCrimson);
-    border: 1px solid var(--deepCrimson);
-    background-color: var(--cream);
-    padding: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.button:hover {
-    color: var(--cream);
-    border: 1px solid var(--raspberryRage);
-    background-color: var(--raspberryRage);
-
-} */
-
 .landing-page .content hr {
     color: var(--charcoal);
     width: 40%;
     float: left;
     margin-top: 40px;
-}
-
-/* .arrow i{
-    position: absolute;
-    margin-top: 68px;
-    left: calc(180px);
-    font-size: 40px;
-    padding: 24px;
-    border-radius: 50%;
-    color: var(--cream);
-    background-color: var(--raspberryRage);
-    width: 36px;
-    height: 36px;
-    text-align: center;
-    justify-content: center;
 }
 
 .arrow i:hover {
@@ -402,9 +366,10 @@ span {
             }
 
             .sidebar-right {
-                display: none; /* Hide sidebar by default on smaller screens */
+                display: none; 
                 position: fixed;
                 top: 60px;
+                height: 100vh;
                 width: 200px;
                 background-color: var(--cream);
                 padding: 16px;
@@ -412,7 +377,7 @@ span {
                 border-bottom: 1px solid var(--mist);
                 right: 0;
                 overflow: hidden; 
-                z-index: 0;
+                z-index: 5;
             }
 
             .sidebar-right.show-sidebar {
@@ -432,9 +397,7 @@ span {
             .sidebar-right .image-container {
                 flex-direction: column;
             }
-
-
-        }
+}
     </style>
 
 </head>
@@ -442,9 +405,6 @@ span {
     <div class="navbar">
         <a href="index.html" id="wolfverelst">Wolf Ver Elst</a>
         <a id="toggleSidebar">Projects</a>
-        <!-- <a href="/src/index.html" class="nav-link">Home</a>
-        <a href="/src/my-work.html" class="nav-link">My Work</a>
-        <a href="/src/about.html" class="nav-link">About</a> -->
         <div class="vertical-line"></div>
         <div class="nav-contact">
             <a class="nav-link" href="mailto:wolfverelst@gmail.com">Contact</a>
@@ -509,35 +469,14 @@ span {
         <h1 class="main-title">A creative, happy and dynamic designer</h1>
         <h2 class="sub-title">Super smooth, with a touch of <span>pink mayo</span></h2>
         <p class="paragraph">Graphic design with a captivating blend of creativity and precision. The art of visual communication, where colors, typography and images come together to convey powerfull messages.</p>
-        <!-- <a href="#" class="button">Get in touch</a> -->
         <hr class="divider">
     </div>
-
-
-    <!-- <div class="arrow">
-        <a href="#"><i class="fa-solid fa-arrow-down"></i></a>
-    </div> -->
 
 </div>
 
 </body>
 <script>
     document.addEventListener('visibilitychange',function(){document.title=document.hidden?'hey! come back!':'wolf ver elst - portfolio'}),document.addEventListener('DOMContentLoaded',function(){const t=document.getElementById('toggleSidebar'),e=document.querySelector('.sidebar-right');t.addEventListener('click',function(){e.classList.toggle('show-sidebar')})});
-
-    function loadDeferredStyles() {
-            var addStylesNode = document.getElementById("deferred-styles");
-            var replacement = document.createElement("div");
-            replacement.innerHTML = addStylesNode.textContent;
-            document.body.appendChild(replacement);
-            addStylesNode.parentElement.removeChild(addStylesNode);
-        }
-
-        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-        if (raf) raf(function () {
-            window.setTimeout(loadDeferredStyles, 0);
-        });
-        else window.addEventListener('load', loadDeferredStyles);
 </script>
 <script src="flow.js"></script>
 </html>

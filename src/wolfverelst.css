@@ -453,23 +453,6 @@ span {
 }
 
 
-
-
-/* sidebar ➡️ */
-.sidebar-right {
-    position: fixed;
-    top: 60px;
-    width: 200px;
-    height: 60vh;
-    background-color: var(--cream);
-    padding: 16px;
-    border-left: 1px solid var(--mist);
-    border-bottom: 1px solid var(--mist);
-    right: 0;
-    overflow: hidden; 
-    z-index: 0;
-}
-
 .sidebar-projects {
     display: flex;
     flex-direction: column;

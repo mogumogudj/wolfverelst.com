@@ -313,6 +313,8 @@ span {
 
             #toggleSidebar {
                 display: block;
+                position: relative;
+                left: 126px;
             }
 
             .sidebar-right {
@@ -337,7 +339,7 @@ span {
             .landing-page .content {
                 width: 60%;
                 margin-left: 100px;
-                margin-top: 60px;
+                margin-top: 100px;
             }
 
             .landing-page .content hr {
@@ -347,6 +349,14 @@ span {
             .sidebar-right .image-container {
                 flex-direction: column;
             }
+            
+            .nav-contact {
+                display: none;
+            }
+
+
+
+
 }
 
 .navbar {
@@ -362,30 +372,6 @@ span {
     border-bottom: 1px solid var(--mist);
     z-index: 2;
     height: 60px;
-}
-
-
-
-.nav-link {
-    text-decoration: none;
-    color: var(--cream);
-    background-color: var(--raspberryRage);
-    margin-right: 20px;
-    font-size: 20px;
-    font-family: var(--SpaceGrotesk);
-    position: relative;
-
-}
-
-.nav-contact .nav-link {
-    display: flex;
-    align-items: center;
-    width: auto;
-    padding: 18px 40px;
-    position: relative;
-    margin-left: auto;
-    right: -9px;
-    cursor: pointer;
 }
 
 .nav-link:hover {
@@ -437,23 +423,6 @@ span {
     font-family: var(--SpaceGrotesk);
     font-size: 16px;
     color: var(--charcoal);
-}
-
-.image-container {
-    animation: scroll 10s linear infinite;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    z-index: 3;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateY(-30%);
-    }
-    100% {
-        transform: translateY(-60%);
-    }
 }
 
 .image-container a {

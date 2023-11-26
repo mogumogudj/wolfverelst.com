@@ -355,6 +355,20 @@ span {
             }
 
 
+.content .main-title {
+    font-size: 20px;
+}
+
+.content .sub-title {
+    font-size: 32px;
+}
+
+.content .paragraph {
+    font-size: 16px;
+}
+
+            
+
 
 
 }

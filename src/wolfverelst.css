@@ -307,6 +307,10 @@ span {
     color: var(--deepCrimson);
 }
 
+#paragraph2 {
+    display: none;
+}
+
 
 
 
@@ -385,6 +389,9 @@ span {
     font-size: 16px;
 }
 
+#paragraph2 {
+    display: block;
+}
             
 
 

@@ -366,7 +366,10 @@ span {
             .work-showcase .gallery {
                 position: relative;
                 right: 32px;
-            
+            }
+
+            .work-showcase .gallery img {
+                width: 80%;
             }
 
 

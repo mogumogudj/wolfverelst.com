@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /src/flow.js
 Disallow: /src/wolfverelst.css
-Disallow: /src/vercel.json

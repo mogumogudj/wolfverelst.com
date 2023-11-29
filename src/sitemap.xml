@@ -52,6 +52,41 @@
       <priority>1.0</priority>
    </url>
 
-   <!-- Add other pages for the second domain if applicable -->
+   <!-- Project Pages -->
+   <url>
+      <loc>https://www.wolfverelst.be/pearl-vintage-store.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.wolfverelst.be/gemak-sessions.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.wolfverelst.be/gemak-identity.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.wolfverelst.be/clubnacht-met-gemak!-vol.II.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.wolfverelst.be/clubnacht-met-gemak!-vol.I.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.wolfverelst.be/brandbook-flow.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
 
 </urlset>

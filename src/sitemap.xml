@@ -9,6 +9,13 @@
         <priority>1.0</priority>
     </url>
 
+    <url>
+        <loc>https://www.wolfverelst.com/index.html</loc>
+        <lastmod>2023-11-25</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
     <!-- Andere pagina's van wolfverelst.com -->
     <url>
         <loc>https://www.wolfverelst.com/gemak-identity.html</loc>

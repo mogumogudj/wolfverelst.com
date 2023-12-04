@@ -263,17 +263,6 @@
     margin-bottom: 20px;
 }
 
-.landing-page .content hr {
-    color: var(--charcoal);
-    width: 40%;
-    float: left;
-    margin-top: 40px;
-}
-
-.arrow i:hover {
-    background-color: var(--deepCrimson);
-} */
-
 .landing-page {
     position: absolute;
     z-index: -5;
@@ -367,15 +356,15 @@ span {
 
 
 .content .main-title {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .content .sub-title {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .content .paragraph {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 #paragraph2 {

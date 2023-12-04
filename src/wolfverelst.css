@@ -189,7 +189,7 @@
 /* sidebar ➡️ */
 .sidebar-right {
     position: fixed;
-    top: 60px;
+    top: 0px;
     width: 200px;
     height: 100vh;
     background-color: var(--cream);
@@ -326,8 +326,7 @@ span {
             .sidebar-right {
                 display: none; 
                 position: fixed;
-                top: 60px;
-                height: 100vh;
+                height: 100%;
                 width: 148px;
                 background-color: var(--cream);
                 padding: 16px;
@@ -335,7 +334,6 @@ span {
                 border-bottom: 1px solid var(--mist);
                 right: 0;
                 overflow: hidden; 
-                z-index: 5;
             }
 
             .sidebar-right.show-sidebar {

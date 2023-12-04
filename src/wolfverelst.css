@@ -368,21 +368,21 @@ span {
             }
 
 
-.content .main-title {
-    font-size: 16px;
-}
+            .content .main-title {
+                font-size: 16px;
+            }
 
-.content .sub-title {
-    font-size: 24px;
-}
+            .content .sub-title {
+                font-size: 24px;
+            }
 
-.content .paragraph {
-    font-size: 12px;
-}
+            .content .paragraph {
+                font-size: 12px;
+            }
 
-#paragraph2 {
-    display: block;
-}
+            #paragraph2 {
+                display: block;
+            }
             
 
 

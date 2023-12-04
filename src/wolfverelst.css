@@ -145,7 +145,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 140px;
 }
 
 .sidebar-icons-left a {
@@ -162,11 +162,26 @@
 }
 
 .sidebar-text-left {
+    display: flex;
     text-align: center;
     font-family: var(--SpaceGrotesk);
     font-size: 16px;
     color: var(--charcoal);
+    height: 100%;
 }
+
+#copyright {
+    font-size: 24px;
+    position: absolute;
+    margin: 0;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    left: -120px;
+    top: 520px;
+    letter-spacing: 4px;
+}
+
+
 
 
 

@@ -104,6 +104,7 @@
     font-family: var(--SpaceGrotesk);
     position: relative;
     padding: 10px 20px;
+    border: 1px solid var(--raspberryRage);
 }
 
 .nav-contact .nav-link {
@@ -120,6 +121,38 @@
 .nav-link:hover {
     color: var(--cream);
     background-color: var(--deepCrimson);
+    border: 1px solid var(--deepCrimson);
+}
+
+
+.ab-link {
+    text-decoration: none;
+    color: var(--cream);
+    background-color: var(--raspberryRage);
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: var(--SpaceGrotesk);
+    position: relative;
+    padding: 10px 20px;
+    border: 1px solid var(--raspberryRage);
+}
+
+.ab-contact .ab-link {
+    display: flex;
+    align-items: center;
+    width: 153px;
+    padding: 18px 40px;
+    position: relative;
+    margin-left: auto;
+    left: 32px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.ab-link:hover {
+    color: var(--cream);
+    background-color: var(--deepCrimson);
+    border: 1px solid var(--deepCrimson);
 }
 
 

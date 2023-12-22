@@ -498,3 +498,21 @@ span {
 .gallery img {
     width: 100%;
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: var(--cream);
+    border: 1px solid var(--mist);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-family: var(--SpaceGrotesk);
+}
+
+.popup p {
+    color: var(--charcoal);
+}

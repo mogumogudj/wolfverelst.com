@@ -65,7 +65,7 @@ a {
         <a id="toggleSidebar">Projects</a>
         <div class="vertical-line"></div>
         <div class="nav-contact">
-            <a class="nav-link" href="mailto:wolfverelst@gmail.com">Contact</a>
+            <a class="nav-link" href="mailto:wolfverelst@gmail.com">Email Me</a>
         </div>
     </div>
 
@@ -77,7 +77,7 @@ a {
         <div class="sidebar-icons-left">
            <a href="https://www.instagram.com/wolfverelst/" target="_blank"><i class="fa-brands fa-instagram fa-2xl" id="sidebar-left-instagram-icon"></i></a>
            <a href="https://www.linkedin.com/in/wolfverelst/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl" id="sidebar-left-linkedin-icon"></i></a>
-           <a href="mailto:wolfverelst@gmail.com" target="_blank"><i class="fa-regular fa-envelope fa-2xl" id="sidebar-left-email-icon"></i></a>
+           <a href="" target="_blank"><i class="fa-regular fa-envelope fa-2xl" id="sidebar-left-email-icon"></i></a>
         </div>
         <div class="sidebar-text-left">
             <p id="copyright">&copy; Wolf Ver Elst 2023</p>
@@ -151,7 +151,9 @@ a {
         </div>
     </div>
 </div>
-
+<div id="copyPopup" class="popup">
+    <p>Email address copied to clipboard</p>
+</div>
 </body>
 <script>
    document.addEventListener('visibilitychange',function(){document.title=document.hidden?'hey! come back!':'wolf ver elst - portfolio'}),document.addEventListener('DOMContentLoaded',function(){const t=document.getElementById('toggleSidebar'),e=document.querySelector('.sidebar-right');t.addEventListener('click',function(){e.classList.toggle('show-sidebar')})});

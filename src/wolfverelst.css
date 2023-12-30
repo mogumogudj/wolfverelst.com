@@ -516,3 +516,51 @@ span {
 .popup p {
     color: var(--charcoal);
 }
+
+.css_zen_garden_link .css_zen_garden_link_target {
+    background-color: var(--raspberryRage);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: var(--SpaceGrotesk);
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.css_zen_garden_link .css_zen_garden_link_target_download {
+    background-color: var(--raspberryRage);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: var(--SpaceGrotesk);
+    position: relative;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.download-links {
+    display: flex;
+    align-items: center;
+    margin-right: 300px;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.button {
+    background-color: var(--raspberryRage);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: var(--SpaceGrotesk);
+    position: relative;
+    padding: 10px 60px;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--cream);
+    background-color: var(--deepCrimson);
+}

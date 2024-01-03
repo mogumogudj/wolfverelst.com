@@ -112,7 +112,7 @@
     display: flex;
     align-items: center;
     width: auto;
-    padding: 18px 77px;
+    padding: 18px 78px;
     position: relative;
     margin-left: auto;
     left: 32px;
@@ -125,40 +125,6 @@
     border: 1px solid var(--deepCrimson);
     border-left: 2px solid var(--deepCrimson);
 }
-
-
-.ab-link {
-    text-decoration: none;
-    color: var(--cream);
-    background-color: var(--raspberryRage);
-    margin-right: 20px;
-    font-size: 18px;
-    font-family: var(--SpaceGrotesk);
-    position: relative;
-    padding: 10px 20px;
-    border: 1px solid var(--raspberryRage);
-}
-
-.ab-contact .ab-link {
-    display: flex;
-    align-items: center;
-    width: 153px;
-    padding: 18px 40px;
-    position: relative;
-    margin-left: auto;
-    left: 32px;
-    cursor: pointer;
-    justify-content: center;
-}
-
-.ab-link:hover {
-    color: var(--cream);
-    background-color: var(--deepCrimson);
-    border: 1px solid var(--deepCrimson);
-}
-
-
-
 
 
 
@@ -174,6 +140,23 @@
     padding: 4px;
     border-right: 1px solid var(--mist);
     z-index: 2;
+}
+
+.profilePicture {
+    width: 50px; 
+    height: 50px;
+    margin-left: 5px;
+    margin-top: 4px;
+}
+
+#profilePictureImage {
+    width: 100%; 
+}
+
+#profilePictureImage:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .sidebar-icons-left {
@@ -212,7 +195,7 @@
     transform: rotate(-90deg);
     white-space: nowrap;
     left: -66px;
-    top: 480px;
+    top: 540px;
     letter-spacing: 4px;
 }
 
@@ -419,6 +402,10 @@ span {
             #paragraph2 {
                 display: block;
             }
+
+            .aboutMeVideo iframe {
+                display: none;
+            }
             
 
 
@@ -566,4 +553,15 @@ span {
 .button:hover {
     color: var(--cream);
     background-color: var(--deepCrimson);
+}
+
+.aboutMeVideo {
+    display: block;
+    position: absolute;
+    width: 60%;
+    padding-bottom: 100px;
+    display: flex;
+    margin-left: 180px;
+    top: 800px;
+    text-align: center;
 }

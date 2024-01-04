@@ -565,3 +565,33 @@ span {
     top: 760px;
     text-align: center;
 }
+
+#audioPlayer {
+    display: none;
+}
+
+#playRandomSong {
+    background-color: var(--raspberryRage);
+    color: var(--cream);
+    font-family: var(--SpaceGrotesk);
+    display: block;
+    margin: 20px auto; /* Adjust the margin as needed */
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    width: 160px;
+}
+
+#toggleSound {
+    background-color: var(--raspberryRage);
+    color: var(--cream);
+    font-family: var(--SpaceGrotesk);
+    display: block;
+    margin: 20px auto;
+    padding: 4px 10px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    width: 160px;
+}

@@ -57,6 +57,34 @@ a {
     cursor: pointer;
 }
 
+
+#audioStatus {
+            margin-top: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .loading-dots::after {
+            content: "...";
+            display: inline-block;
+            animation: loadingDots 1s infinite;
+        }
+
+        @keyframes loadingDots {
+            0%, 20% {
+                color: transparent;
+            }
+
+            40% {
+                color: #333; 
+            }
+
+            60% {
+                color: transparent;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -156,6 +184,8 @@ a {
     <p>Email address copied to clipboard</p>
 </div>
 
+<p id="audioStatus">Not Playing Anything</p>
+
 <a href="#" id="playRandomSong">Click to Play a Random Song</a>
 
 <a href="#" id="toggleSound">Toggle Sound</a>
@@ -178,18 +208,30 @@ a {
     document.addEventListener('DOMContentLoaded', function () {
         // Your existing audio player setup
         const audioPlayer = document.getElementById('audioPlayer');
+        const audioStatus = document.getElementById('audioStatus');
 
         // Your existing toggle sound functionality
         const toggleSoundLink = document.getElementById('toggleSound');
         function toggleSound() {
             if (audioPlayer.paused) {
                 audioPlayer.play();
+                audioStatus.innerText = 'Playing: ' + getSongName(audioPlayer.src);
                 console.log('Playing audio');
             } else {
                 audioPlayer.pause();
+                audioStatus.innerText = 'Audio Muted';
                 console.log('Pausing audio');
             }
         }
+
+        function getSongName(src) {
+            const fileName = src.split('/').pop();
+    const titleWithoutExtension = fileName.split('.').slice(0, -1).join('.');
+    const result = titleWithoutExtension || 'Unknown Song';
+    console.log('Song name:', result);
+    return result;
+        }
+
         toggleSoundLink.addEventListener('click', function (event) {
             event.preventDefault();
             toggleSound();
@@ -207,17 +249,22 @@ a {
         playRandomSongButton.addEventListener('click', function (event) {
             event.preventDefault();
             const songs = [
-                'images/wallaroo-kleinefrigo/wallaroo.mp3',
-                'images/wallaroo-kleinefrigo/wallaroo.mp3',
-                'images/wallaroo-kleinefrigo/wallaroo.mp3',
+                'images/wallaroo-kleinefrigo/wallaroo.wav',
+                'images/wallaroo-kleinefrigo/V12.wav',
+                'images/wallaroo-kleinefrigo/Down_Low.wav',
+                'images/wallaroo-kleinefrigo/Wants_&_Needs.wav',
                 // Add more songs as needed
             ];
 
             const randomIndex = Math.floor(Math.random() * songs.length);
-            audioPlayer.src = songs[randomIndex];
-            audioPlayer.play();
-            console.log('Playing song at index', randomIndex);
-        });
+    audioPlayer.src = songs[randomIndex];
+    audioPlayer.play();
+
+    // Update the status after a short delay to allow time for the audio to load
+    setTimeout(function () {
+        audioStatus.innerText = 'Playing: ' + getSongName(audioPlayer.src);
+    }, 500); // Adjust the delay as needed
+});
     });
 </script>
 <script defer src="flow.js"></script>

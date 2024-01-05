@@ -595,3 +595,16 @@ span {
     cursor: pointer;
     width: 160px;
 }
+
+#audioStatus {
+    background-color: var(--chiliPepper);
+    color: var(--cream);
+    font-family: var(--SpaceGrotesk);
+    display: block;
+    margin: 20px auto;
+    padding: 4px 10px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    width: 160px;
+}

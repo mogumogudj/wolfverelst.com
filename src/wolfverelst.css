@@ -147,8 +147,9 @@
     height: 40px;
     margin-left: 5px;
     margin-top: 4px;
+    display: none;
 }
-
+/* 
 #profilePictureImage {
     width: 100%; 
 }
@@ -157,7 +158,7 @@
     transform: scale(1.1);
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
-}
+} */
 
 .sidebar-icons-left {
     display: flex;

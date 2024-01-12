@@ -25,8 +25,12 @@ const imageContainer = document.querySelector('.image-container'),
         imageContainer.appendChild(firstImage);
     };
 
-setInterval(scrollImages, 20000);
+setInterval(scrollImages, 38000);
 console.log(scrollImages);
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const emailIcon = document.getElementById('sidebar-left-email-icon');

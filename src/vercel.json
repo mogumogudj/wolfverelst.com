@@ -3,4 +3,3 @@
     { "source": "/:path*", "destination": "/:path*.html" }
   ]
 }
-

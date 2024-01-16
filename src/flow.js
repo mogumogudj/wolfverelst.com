@@ -5,7 +5,7 @@ const galleryItems = document.querySelectorAll('.gallery-item'),
 
 galleryItems.forEach(item => {
     item.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the default behavior of the anchor element
+        event.preventDefault(); 
         const anchor = item.querySelector('a');
         const pageUrl = anchor.getAttribute('href');
         window.location.href = pageUrl;

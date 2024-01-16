@@ -1,42 +1,39 @@
-const galleryItems = document.querySelectorAll('.gallery-item'),
-    overlay = document.querySelector('.overlay'),
-    overlayImage = document.querySelector('#overlay-image'),
-    closeButton = document.querySelector('#close-button');
-
-galleryItems.forEach(item => {
-    item.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the default behavior of the anchor element
-        const anchor = item.querySelector('a');
-        const pageUrl = anchor.getAttribute('href');
-        window.location.href = pageUrl;
-    });
-});
-
-// Check if closeButton and overlay are not null before adding the event listener
-if (closeButton && overlay) {
-    closeButton.addEventListener('click', () => {
-        overlay.style.display = 'none';
-    });
-}
-
-const imageContainer = document.querySelector('.image-container'),
-    scrollImages = function () {
-        const firstImage = imageContainer.firstElementChild;
-        imageContainer.appendChild(firstImage);
-    };
-
-setInterval(scrollImages, 38000);
-console.log(scrollImages);
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const overlay = document.querySelector('.overlay');
+    const closeButton = document.querySelector('#close-button');
+    const imageContainer = document.querySelector('.image-container');
     const emailIcon = document.getElementById('sidebar-left-email-icon');
     const popup = document.getElementById('copyPopup');
     const emailAddress = 'wolfverelst@gmail.com'; // Replace with your actual email address
 
+    // Function to scroll images in the gallery
+    const scrollImages = function () {
+        const firstImage = imageContainer.firstElementChild;
+        imageContainer.appendChild(firstImage);
+    };
+
+    // Function to handle gallery item click
+    const handleGalleryItemClick = function (event) {
+        event.preventDefault();
+        const anchor = event.currentTarget.querySelector('a');
+        const pageUrl = anchor.getAttribute('href');
+        window.location.href = pageUrl;
+    };
+
+    // Event listener for gallery items
+    galleryItems.forEach(item => {
+        item.addEventListener('click', handleGalleryItemClick);
+    });
+
+    // Event listener for closeButton and overlay (if they exist)
+    if (closeButton && overlay) {
+        closeButton.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+    }
+
+    // Event listener for copying email address to clipboard
     emailIcon.addEventListener('click', function () {
         const tempInput = document.createElement('input');
         tempInput.value = emailAddress;
@@ -54,4 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             popup.style.display = 'none';
         }, 2000);
     });
+
+    // Set interval for scrolling images
+    setInterval(scrollImages, 38000);
 });

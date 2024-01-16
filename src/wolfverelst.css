@@ -287,6 +287,12 @@ a {
                 display: block;
             }
 
+            .sidebar-right .image-container {
+                flex-direction: column;
+            }
+            
+            
+
             .landing-page .content {
                 width: 48%;
                 margin-left: 100px;
@@ -296,10 +302,7 @@ a {
             .landing-page .content hr {
                 display: none;
             }
-
-            .sidebar-right .image-container {
-                flex-direction: column;
-            }
+            
             
             .nav-contact {
                 display: none;

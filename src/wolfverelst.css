@@ -34,6 +34,19 @@
     --SpaceGrotesk:'Space Grotesk', sans-serif;
 }
 
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
+    text-transform: lowercase;
+    height: 100vh;
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+}
+
 
 
 .navbar {

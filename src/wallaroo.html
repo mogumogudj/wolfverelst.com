@@ -18,19 +18,7 @@
     <meta property="og:image:alt" content="wolf ver elst - portfolio background" />
     <meta property="og:description" content="creative graphic designer" />
 
-
-
-<!-- Twitter Card tags -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="wolf ver elst - portfolio" />
-<meta name="twitter:description" content="creative graphic designer" />
-<meta name="twitter:image" content="https://pearlvintagestore.com/wolfverelst.png" />
-
 <meta name="robots" content="index, follow" />
-
-
-<meta name="description" content="Discover Wolf Ver Elst's vibrant 3D design portfolio. As a dynamic and youthful graphic designer, Wolf brings a fresh and happy approach to creative expression. Explore a world of colorful and dynamic designs that reflect a joyful and energetic spirit." />
-
 
 <link rel="stylesheet" href="wolfverelst.css">
 </head>
@@ -158,22 +146,9 @@
     <source src="" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
-
-
-
-    <!-- Google tag (gtag.js) -->
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-YK11EX325Z"></script>
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-D2Q87TKQBX"></script>
     
 <script defer>
     document.addEventListener('visibilitychange',function(){document.title=document.hidden?'hey! come back!':'wolf ver elst - portfolio'}),document.addEventListener('DOMContentLoaded',function(){const t=document.getElementById('toggleSidebar'),e=document.querySelector('.sidebar-right');t.addEventListener('click',function(){e.classList.toggle('show-sidebar')})});
-
-    // Google tag (gtag.js)
-    window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YK11EX325Z');
-  gtag('config', 'G-D2Q87TKQBX');
     
     document.addEventListener('DOMContentLoaded', function () {
         // Your existing audio player setup
@@ -209,8 +184,6 @@
 
         // New functionality to play a random song
         document.addEventListener('click', function (event) {
-            // Commented out the line that sets display to 'block'
-            // audioPlayer.style.display = 'block';
             event.preventDefault();
             document.removeEventListener('click', arguments.callee);
         });
@@ -223,7 +196,6 @@
                 'images/wallaroo-kleinefrigo/V12.wav',
                 'images/wallaroo-kleinefrigo/Down_Low.wav',
                 'images/wallaroo-kleinefrigo/Wants_&_Needs.wav',
-                // Add more songs as needed
             ];
 
             const randomIndex = Math.floor(Math.random() * songs.length);
@@ -233,7 +205,7 @@
     // Update the status after a short delay to allow time for the audio to load
     setTimeout(function () {
         audioStatus.innerText = 'Playing: ' + getSongName(audioPlayer.src);
-    }, 500); // Adjust the delay as needed
+    }, 500);
 });
     });
 </script>

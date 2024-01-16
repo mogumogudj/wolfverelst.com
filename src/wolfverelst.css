@@ -291,7 +291,7 @@ a {
                 flex-direction: column;
             }
             
-            
+
 
             .landing-page .content {
                 width: 48%;
@@ -499,7 +499,7 @@ span {
     color: var(--cream);
     font-family: var(--SpaceGrotesk);
     display: block;
-    margin: 20px auto; /* Adjust the margin as needed */
+    margin: 20px auto;
     padding: 10px 20px;
     text-decoration: none;
     text-align: center;

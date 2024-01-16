@@ -331,10 +331,14 @@ a {
                 display: block;
             }
 
-            .aboutMeVideo iframe {
-                display: none;
+            .download-links {
+                margin-left: 312px;
+                text-align: center;
             }
-            
+
+            #css_zen_garden_video {
+                width: 350px;
+            }
 
 
 
@@ -482,16 +486,6 @@ span {
     background-color: var(--deepCrimson);
 }
 
-.aboutMeVideo {
-    display: block;
-    position: absolute;
-    width: 60%;
-    padding-bottom: 100px;
-    display: flex;
-    margin-left: 180px;
-    top: 760px;
-    text-align: center;
-}
 
 #audioPlayer {
     display: none;

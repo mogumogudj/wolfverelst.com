@@ -302,6 +302,10 @@ a {
             .landing-page .content hr {
                 display: none;
             }
+
+            .ml-embedded {
+                height: 100%;
+            }
             
             
             .nav-contact {
@@ -342,8 +346,6 @@ a {
             #css_zen_garden_video {
                 width: 350px;
             }
-
-
 
 }
 
@@ -396,6 +398,14 @@ span {
     color: var(--cream);
     padding-left: 12px;
     padding-right: 12px;
+}
+
+
+.ml-embedded {
+    position: absolute;
+    top: 420px;
+    width: 100%;
+    height: 100%;
 }
 
 

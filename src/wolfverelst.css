@@ -483,6 +483,38 @@ span {
     padding-bottom: 40px;
 }
 
+
+.card {
+    background-color: var(--cream);
+    border: 1px solid var(--mist);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--mist);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 20px;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+    font-family: var(--SpaceGrotesk);
+}
+
+.card-description {
+    font-size: 16px;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    font-family: var(--SpaceGrotesk);
+}
+
 .button {
     background-color: var(--raspberryRage);
     color: var(--cream);

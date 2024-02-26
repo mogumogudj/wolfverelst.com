@@ -574,3 +574,25 @@ span {
     cursor: pointer;
     width: 160px;
 }
+
+
+.blogPost {
+    background-color: var(--cream);
+    border: 1px solid var(--mist);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.blogPostParagraph {
+    font-size: 16px;
+    color: var(--charcoal);
+    line-height: 1.5;
+    font-family: var(--SpaceGrotesk);
+}
+
+.blogPostCoverImage img {
+    width: 100%; /* Ensure image width spans the container */
+    border-radius: 8px; /* Apply border-radius to image */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+}

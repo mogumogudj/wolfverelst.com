@@ -206,6 +206,7 @@ a {
     border-bottom: 1px solid var(--mist);
     border-top: 0px solid;
     right: 0;
+    overflow-y: auto;
 }
 
 .sidebar-projects {
@@ -275,6 +276,8 @@ a {
                 position: fixed;
                 height: 100%;
                 width: 148px;
+                width: 50%; /* Adjusted width for smaller screens */
+                max-width: 200px;
                 background-color: var(--cream);
                 padding: 16px;
                 border-left: 1px solid var(--mist);

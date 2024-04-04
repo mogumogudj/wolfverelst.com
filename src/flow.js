@@ -1,24 +1,3 @@
-const galleryItems = document.querySelectorAll('.gallery-item'),
-    overlay = document.querySelector('.overlay'),
-    overlayImage = document.querySelector('#overlay-image'),
-    closeButton = document.querySelector('#close-button');
-
-galleryItems.forEach(item => {
-    item.addEventListener('click', (event) => {
-        event.preventDefault(); 
-        const anchor = item.querySelector('a');
-        const pageUrl = anchor.getAttribute('href');
-        window.location.href = pageUrl;
-    });
-});
-
-// Check if closeButton and overlay are not null before adding the event listener
-if (closeButton && overlay) {
-    closeButton.addEventListener('click', () => {
-        overlay.style.display = 'none';
-    });
-}
-
 const imageContainer = document.querySelector('.image-container'),
     scrollImages = function () {
         const firstImage = imageContainer.firstElementChild;
@@ -35,7 +14,7 @@ setInterval(scrollImages, 38000);
 document.addEventListener('DOMContentLoaded', function () {
     const emailIcon = document.getElementById('sidebar-left-email-icon');
     const popup = document.getElementById('copyPopup');
-    const emailAddress = 'wolfverelst@gmail.com'; // Replace with your actual email address
+    const emailAddress = 'wolfverelst@gmail.com'; 
 
     emailIcon.addEventListener('click', function () {
         const tempInput = document.createElement('input');

@@ -106,32 +106,6 @@
 </audio>
     
 <script defer>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('sidebar.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('sidebarContainer').innerHTML = html;
-            });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-    const t = document.getElementById('toggleSidebar');
-    const scrollImages = function() {
-        const imageContainer = document.querySelector('.image-container');
-        const firstImage = imageContainer.firstElementChild;
-        imageContainer.appendChild(firstImage);
-    };
-
-    t.addEventListener('click', function() {
-        const e = document.querySelector('.sidebar-right');
-        e.classList.toggle('show-sidebar');
-    });
-
-    setInterval(scrollImages, 38000);
-});
-
-
-
     document.addEventListener('visibilitychange',function(){document.title=document.hidden?'hey! come back!':'wolf ver elst - portfolio'});
     
     document.addEventListener('DOMContentLoaded', function () {

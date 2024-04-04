@@ -206,7 +206,6 @@ a {
     border-bottom: 1px solid var(--mist);
     border-top: 0px solid;
     right: 0;
-    overflow-y: auto;
 }
 
 .sidebar-projects {

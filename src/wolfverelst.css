@@ -340,14 +340,19 @@ a {
                 display: block;
             }
 
-            .download-links {
-                margin-left: 312px;
-                text-align: center;
+            #CSSZENGARDEN-VISITWEBSITEBTN {
+                display: none;
+            }
+
+            #CSSZENGARDEN-DOWNLOADNOWBTN {
+                display: none;
             }
 
             #css_zen_garden_video {
                 width: 350px;
             }
+
+            
 
 }
 
@@ -479,7 +484,7 @@ span {
 .download-links {
     display: flex;
     align-items: center;
-    margin-right: 300px;
+    margin-right: 100px;
     justify-content: center;
     gap: 40px;
     padding-bottom: 40px;

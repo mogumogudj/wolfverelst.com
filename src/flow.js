@@ -1,10 +1,4 @@
-const imageContainer = document.querySelector('.image-container'),
-    scrollImages = function () {
-        const firstImage = imageContainer.firstElementChild;
-        imageContainer.appendChild(firstImage);
-    };
 
-setInterval(scrollImages, 38000);
 
 
 

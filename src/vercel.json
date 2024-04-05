@@ -1,8 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "destination": "/src/:path*.html"
-    }
-  ]
+  "cleanUrls": true
 }

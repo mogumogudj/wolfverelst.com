@@ -1,92 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-   <!-- Homepage -->
-   <url>
-      <loc>https://www.wolfverelst.com/</loc>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.wolfverelst.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-   <!-- Project Pages -->
-   <url>
-      <loc>https://www.wolfverelst.com/pearl-vintage-store.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.wolfverelst.be/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-   <url>
-      <loc>https://www.wolfverelst.com/gemak-sessions.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  
 
-   <url>
-      <loc>https://www.wolfverelst.com/gemak-identity.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.com/clubnacht-met-gemak!-vol.II.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.com/clubnacht-met-gemak!-vol.I.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.com/brandbook-flow.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <!-- Second Domain -->
-   <url>
-      <loc>https://www.wolfverelst.be/</loc>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
-
-   <!-- Project Pages -->
-   <url>
-      <loc>https://www.wolfverelst.be/pearl-vintage-store.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.be/gemak-sessions.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.be/gemak-identity.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.be/clubnacht-met-gemak!-vol.II.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.be/clubnacht-met-gemak!-vol.I.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.wolfverelst.be/brandbook-flow.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  <!-- Opperdash Project Page
+  <url>
+    <loc>https://www.wolfverelst.com/opperdash.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url> -->
 
 </urlset>

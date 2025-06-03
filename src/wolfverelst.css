@@ -662,7 +662,7 @@ cursor: pointer;
 
 body.cursor-wolfverelst .cursor2,
 body.cursor-wolfverelst .cursor3 {
-  background-image: url('images/Jonas_Reubens-38.jpg'); /* Zorg dat dit een passende afbeelding is */
+  background-image: url('https://blijhuis.be/wolf/Jonas_Reubens-38.jpg'); /* Zorg dat dit een passende afbeelding is */
   border: 1px solid var(--ruby);
 }
 

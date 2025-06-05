@@ -78,10 +78,31 @@ cursor: pointer;
 }
 
 .nav-logo {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--ruby);
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 600;
   text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  color: var(--ruby);
+}
+
+.nav-logo:hover {
+  transform: translateX(4px) skewX(5deg);
+}
+
+@keyframes leanStretch {
+  0% {
+    transform: scaleX(1) rotate(0deg);
+  }
+  40% {
+    transform: scaleX(1.08) rotate(-2deg);
+  }
+  60% {
+    transform: scaleX(0.97) rotate(1deg);
+  }
+  100% {
+    transform: scaleX(1) rotate(0deg);
+  }
 }
 
 .nav-links {

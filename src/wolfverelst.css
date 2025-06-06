@@ -37,6 +37,11 @@ cursor: pointer;
   font-weight: 500;
 }
 
+.ruby-link {
+  color: var(--ruby);
+  text-decoration: none;
+}
+
 .link {
   color: inherit;
   transition: opacity 0.2s ease;

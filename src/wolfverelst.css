@@ -141,7 +141,7 @@ cursor: pointer;
 .slideshow-container {
   position: relative;
   width: 100%;
-  height: 70vh; /* Aangepast formaat */
+  height: 60vh; /* Aangepast formaat */
   overflow: hidden;
   margin-top: 4rem;
 }

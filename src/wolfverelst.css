@@ -398,7 +398,9 @@ cursor: pointer;
 }
 
 #about-contact {
-  margin-bottom: 2rem;
+  margin-bottom: 16rem;
+  position: relative;
+  top: 7rem;
 }
 
 .about-layout {

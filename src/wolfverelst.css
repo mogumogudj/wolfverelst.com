@@ -575,6 +575,10 @@ cursor: pointer;
       padding: 6rem 0 4rem;
   }
 
+  .slideshow-container {
+      top: 40px;/* Aangepast formaat */
+  }
+
   .rotating-images {
       gap: 0.75rem;
   }

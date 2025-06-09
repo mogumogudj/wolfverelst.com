@@ -561,6 +561,22 @@ cursor: pointer;
     flex-direction: column;
   }
 
+    .main-heading {
+      font-size: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .current-projects {
+      font-size: 1.4rem;
+      margin: 2rem 0;
+    }
+
+    .last-updated {
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+
   .nav {
       padding: 1rem;
       flex-direction: column;

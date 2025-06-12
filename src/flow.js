@@ -103,7 +103,7 @@ document.addEventListener("scroll", () => {
       const scrollY = Math.min(Math.max(window.innerHeight - startY, 0), scrollRange);
       const maxScroll = scrollContent.scrollWidth - window.innerWidth;
       const scrollPercent = scrollY / scrollRange;
-      const scrollX = -scrollPercent * maxScroll * 0.4;
+      const scrollX = -scrollPercent * maxScroll * 0.7;
 
       scrollContent.style.transform = `translateX(${scrollX}px)`;
     }

@@ -84,6 +84,21 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+
+  // Also toggle slideshow on click
+  if (slideshowContainer) {
+    slideshowContainer.addEventListener('click', function () {
+      if (!isPaused) {
+        clearInterval(slideInterval);
+        slideshowContainer.classList.add('expanded');
+        isPaused = true;
+      } else {
+        slideInterval = setInterval(nextSlide, 1000);
+        slideshowContainer.classList.remove('expanded');
+        isPaused = false;
+      }
+    });
+  }
 });
 
 // Horizontal scroll effect for each project scroll wrapper
@@ -179,3 +194,28 @@ topNavLinks.forEach(link => {
 aboutNavLinks.forEach(link => link.addEventListener('click', () => {
   setTimeout(setAboutNavActive, 400);
 }));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const instruction = document.getElementById("pause-instruction");
+
+  function updateInstruction() {
+    const isTouchDevice =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
+
+    const isSmallScreen = window.innerWidth <= 768; // adjust breakpoint if needed
+
+    if (isTouchDevice || isSmallScreen) {
+      instruction.textContent = "[tap to pause]";
+    } else {
+      instruction.textContent = "[click or press space to pause]";
+    }
+  }
+
+  // Run once on load
+  updateInstruction();
+
+  // Update whenever window resizes
+  window.addEventListener("resize", updateInstruction);
+});

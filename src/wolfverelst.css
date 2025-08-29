@@ -170,6 +170,11 @@ cursor: pointer;
   transition: transform 0.3s ease;
 }
 
+main p {
+  text-align: center;
+  justify-content: center;
+}
+
 
 
 /* Hero Section */

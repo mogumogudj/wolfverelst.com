@@ -19,7 +19,10 @@ body {
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.02em;
-  cursor: url('https://blijhuis.be/wolf/keepscroll.png'), auto;
+}
+
+.projects-body {
+  cursor: url('https://blijhuis.be/wolf/keepthescrollwithshadow.png'), auto;
 }
 
 a {
@@ -335,7 +338,6 @@ cursor: pointer;
   overflow: hidden;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  cursor: pointer;
   padding-left: 0; /* eventueel aanpassen voor spacing */
 }
 

@@ -220,7 +220,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateInstruction);
 });
 
-
-document.querySelectorAll('img').forEach(img => {
-  img.setAttribute('data-pin-no-hover', 'true');
-});

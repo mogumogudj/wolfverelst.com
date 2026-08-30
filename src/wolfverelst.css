@@ -916,3 +916,72 @@ body.cursor-wolfverelst .cursor3 {
     transform: none !important;
   }
 }
+
+
+@media (max-width: 767px) {
+
+  .horizontal-scroll-wrapper {
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 0 0 8px;
+  }
+
+  .horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .horizontal-scroll {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    width: max-content;
+    height: auto;
+
+    padding: 0 12px;
+
+    transform: none !important;
+  }
+
+  .project-media-item {
+    flex: 0 0 84vw;
+    width: 84vw;
+    height: auto;
+
+    margin: 0;
+
+    border: 1px solid var(--ruby);
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    scroll-snap-align: center;
+  }
+
+  .project-media-item img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+  }
+
+  .mobile-gallery-hint {
+    margin: 8px 12px 0;
+  }
+
+}

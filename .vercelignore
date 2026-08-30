@@ -1,0 +1,15 @@
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+
+.git
+.git/**
+
+node_modules
+node_modules/**
+
+.vscode
+.vscode/**
+src/imagescopy
+src/imagescopy/**

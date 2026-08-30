@@ -1,11 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap');
 
 :root {
   --sugar-milk: #fcf6f6;
   --ruby: #9a230f;
   --ruby-light: #e3c0bc;
   --font: 'Space Grotesk', sans-serif;
+  --mono: 'Roboto Mono', monospace;
+
+  --page-max: 1264px;
+  --page-gutter: 2rem;
+  --page-gutter-mobile: 1rem;
+
+  --header-clearance: 6.75rem;
+  --project-gap: 2rem;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -13,6 +30,8 @@ html {
 }
 
 body {
+  margin: 0;
+  overflow-x: hidden;
   font-family: var(--font);
   background-color: var(--sugar-milk);
   color: var(--ruby);
@@ -21,21 +40,30 @@ body {
   letter-spacing: -0.02em;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding-inline: var(--page-gutter);
+}
+
 .projects-body {
   cursor: url('https://blijhuis.be/wolf/keepthescrollwithshadow.png'), auto;
 }
 
-a {
-cursor: pointer;
-}
+/* =========================================================
+   TYPOGRAPHY / LINKS
+========================================================= */
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Typography */
 .italic {
   font-style: italic;
   font-weight: 500;
@@ -48,9 +76,9 @@ cursor: pointer;
 
 .link {
   color: inherit;
-  transition: opacity 0.2s ease;
   text-decoration: none;
-  font-weight: 100;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
 }
 
 .link:hover {
@@ -59,28 +87,33 @@ cursor: pointer;
 
 .underline {
   border-bottom: 1px solid var(--ruby);
-} 
+}
 
 .cursor-pointer {
   cursor: pointer;
 }
 
-/* Header */
+/* =========================================================
+   HEADER
+   Same visual navigation, now using the exact same content
+   width/gutters as the rest of the site.
+========================================================= */
+
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
   z-index: 1000;
   background-color: var(--sugar-milk);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--ruby-light);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .nav {
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 1.8rem 2rem;
+  padding: 1.8rem var(--page-gutter);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,30 +121,15 @@ cursor: pointer;
 
 .nav-logo {
   display: inline-block;
+  color: var(--ruby);
   font-size: 1.8rem;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  color: var(--ruby);
 }
 
 .nav-logo:hover {
   transform: translateX(4px) skewX(5deg);
-}
-
-@keyframes leanStretch {
-  0% {
-    transform: scaleX(1) rotate(0deg);
-  }
-  40% {
-    transform: scaleX(1.08) rotate(-2deg);
-  }
-  60% {
-    transform: scaleX(0.97) rotate(1deg);
-  }
-  100% {
-    transform: scaleX(1) rotate(0deg);
-  }
 }
 
 .nav-links {
@@ -122,43 +140,54 @@ cursor: pointer;
 .nav-link {
   color: var(--ruby);
   text-decoration: none;
-  font-weight: bolder;
+  font-weight: 700;
   font-size: 1.6rem;
-  transition: opacity 0.2s ease;
   text-transform: uppercase;
+  transition: opacity 0.2s ease;
 }
 
 .nav-link:hover {
   opacity: 0.7;
-  font-weight: 100;
-  font-optical-sizing: auto;
   font-style: italic;
+  font-weight: 400;
 }
 
 .nav-link.active {
   font-style: italic;
-  font-weight: 100;
+  font-weight: 400;
 }
 
+/* =========================================================
+   HERO / ROTATING OBJECT
+   Wayside-like viewport staging, but your colors + typography.
+========================================================= */
 
-/*slideshow*/
+.hero-stage {
+  min-height: 100svh;
+  padding-top: var(--header-clearance);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
 .slideshow-container {
   position: relative;
   width: 100%;
-  height: 60vh; /* Aangepast formaat */
+  min-height: 0;
   overflow: hidden;
-  margin-top: 4rem;
 }
 
 .slide {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: auto;
-  height: 80%;
+  height: min(66vh, 720px);
+  max-width: min(78vw, 1100px);
   object-fit: contain;
+  transform: translate(-50%, -50%);
   display: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .slide.active {
@@ -166,73 +195,59 @@ cursor: pointer;
 }
 
 .slideshow-container.expanded .slide.active {
-  transform: translate(-50%, -50%) scale(1.25);
+  transform: translate(-50%, -50%) scale(1.16);
   transition: transform 0.3s ease;
 }
 
-main p {
+#pause-instruction {
+  margin: 0;
+  padding: 0 1rem 1.25rem;
   text-align: center;
-  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
+/* =========================================================
+   INTRO
+========================================================= */
 
-
-/* Hero Section */
-.hero {
-  padding: 8rem 0 4rem;
-  background-color: red;
-}
-
-.rotating-images {
-  display: cover;
-  gap: 1rem;
-  background-color: blue;
+.current-projects-container {
   width: 100%;
-  height: 40%;
-}
-
-.rotating-images img {
-  width: 100%;
-  height: 10rem;
-  object-fit: cover;
-  border-radius: 4px;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 4rem var(--page-gutter) 2rem;
 }
 
 .main-heading {
+  max-width: 1000px;
+  margin: 0 0 4rem;
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03em;
-  margin-top: 3rem;
-  margin: 4rem;
-  max-width: 1000px;
 }
-
-.current-projects-container {
-  margin: 0rem 2rem auto;
-}
-
 
 .current-projects {
+  max-width: 100%;
+  margin: 0 0 4rem;
   font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.03em;
-  margin-bottom: 2rem;
-  margin: 4rem;
-  max-width: 100%;
 }
 
 .last-updated {
+  margin: 0;
   font-size: 1.125rem;
-  margin-bottom: 4rem;
-  margin: 4rem;
 }
 
-/* Timeline Section */
+/* =========================================================
+   TIMELINE
+========================================================= */
+
 .timeline {
   padding: 4rem 0;
-  
 }
 
 .timeline-item {
@@ -242,173 +257,175 @@ main p {
 }
 
 .timeline-badge {
-  background-color: var(--ruby-light);
-  color: var(--ruby);
-  padding: 0.5rem 0.75rem;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  text-transform: uppercase;
   display: inline-block;
   margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--ruby-light);
+  color: var(--ruby);
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  text-transform: uppercase;
 }
 
 .timeline-title {
+  max-width: 800px;
+  margin: 0 0 0.5rem;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  max-width: 800px;
 }
 
-/* Projects Section */
+/* =========================================================
+   PROJECTS — WAYSIDE-INSPIRED SCROLL SYSTEM
 
-.project {
+   Desktop:
+   - every project is a long scroll scene
+   - copy stays pinned in the viewport
+   - images travel horizontally OVER the copy
+   - images have the higher z-index, so they physically cover text
+
+   The actual translate distance/scene height is calculated by flow.js.
+========================================================= */
+
+.projects {
   position: relative;
-  top: 180px;
-  margin-top: 0rem;
+}
+
+.project-scene {
+  --scene-height: 260vh;
+  position: relative;
+  height: var(--scene-height);
+  width: 100%;
+}
+
+.project-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: clip;
+  isolation: isolate;
+}
+
+/* Background copy */
+.project-copy-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
 }
 
 .project-container {
-  margin: 2rem auto;
-}
-
-#featured-project-undertext {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.project-images {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.project-images {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.drylongso-images {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.onolive-images,
-.howard-images,
-.diasflora-images {
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
-.project-images img,
-.project-hero-image {
   width: 100%;
-  height: 16rem;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.project-hero-image {
-  height: 20rem;
-  margin-bottom: 2rem;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: calc(var(--header-clearance) + 1rem) var(--page-gutter) 4rem;
+  pointer-events: auto;
 }
 
 .project-title {
-  font-size: 1.875rem;
+  max-width: 1000px;
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 5.1vw, 5.5rem);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 
 .project-meta {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
   margin-bottom: 1rem;
+  font-family: var(--mono);
+  font-size: 0.875rem;
 }
 
 .project-description {
-  font-size: 1.125rem;
-  margin-bottom: 1.5rem;
   max-width: 800px;
-}
-
-.project-link {
+  margin: 0 0 1.5rem;
   font-size: 1.125rem;
-  display: inline-block;
 }
 
+.featured-project-undertext {
+  max-width: 950px;
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+}
 
-
+/* Foreground images */
+.project-media-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
 
 .horizontal-scroll-wrapper {
-  position: relative;
-  height: 100vh;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding-left: 0; /* eventueel aanpassen voor spacing */
 }
 
 .horizontal-scroll {
-  display: flex;
-  gap: 2rem;
-  height: 100%;
-  will-change: transform;
-  transform: translateX(100vw);
-  transition: transform 0.1s linear;
+  --track-x: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 0;
   width: max-content;
+  display: flex;
+  align-items: center;
+  gap: var(--project-gap);
+  transform: translate3d(var(--track-x), -50%, 0);
+  will-change: transform;
 }
 
-.horizontal-scroll img {
-  flex-shrink: 0;
-  height: 60vh;
+.project-media-item {
+  flex: 0 0 auto;
+  margin: 0;
+  position: relative;
+}
+
+/* Small vertical offsets create the loose, floating Wayside rhythm. */
+.project-media-item:nth-child(5n + 1) { top: -6vh; }
+.project-media-item:nth-child(5n + 2) { top:  5vh; }
+.project-media-item:nth-child(5n + 3) { top: -2vh; }
+.project-media-item:nth-child(5n + 4) { top:  8vh; }
+.project-media-item:nth-child(5n + 5) { top: -4vh; }
+
+.project-media-item img {
+  width: auto;
+  height: min(60vh, 680px);
+  max-width: 72vw;
+  object-fit: cover;
   border: 1px solid var(--ruby);
   border-radius: 8px;
-  object-fit: cover;
+  background: var(--sugar-milk);
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
+/* Tiny project number — sits above copy, below image track. */
+.project-index {
+  position: absolute;
+  right: max(var(--page-gutter), calc((100vw - var(--page-max)) / 2 + var(--page-gutter)));
+  bottom: 1.25rem;
+  z-index: 1;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0;
+}
 
-/* About Section */
+.mobile-gallery-hint {
+  display: none;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
 .about {
   padding: 4rem 0;
   margin-top: 8rem;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 4rem;
-}
-
-.about-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-
-.about-text {
-  font-size: 1.125rem;
-  margin-bottom: 1.5rem;
-}
-
-.capabilities-list {
-  list-style: none;
-  font-size: 1.125rem;
-}
-
-.capabilities-list li {
-  margin-bottom: 0.5rem;
-}
-
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-#about-contact {
-  margin-bottom: 16rem;
-  position: relative;
-  top: 7rem;
 }
 
 .about-layout {
@@ -418,32 +435,7 @@ main p {
   width: 50%;
 }
 
-.about-row {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap; /* zorgt dat het op mobiel terug naar onder springt */
-}
-
-.about-photo {
-  max-width: 280px;
-  height: auto;
-  border-radius: 1rem;
-  flex-shrink: 0;
-  border: 1px solid var(--ruby);
-}
-
-.about-text-wrapper {
-  flex: 1;
-  min-width: 280px;
-  position: relative;
-  bottom: 1rem;
-}
-
-
-
 .about-nav {
-  display: block;
   position: sticky;
   top: 160px;
   flex-shrink: 0;
@@ -468,9 +460,8 @@ main p {
   opacity: 1;
   font-style: italic;
   text-decoration: underline;
-  font-weight: 200;
+  font-weight: 400;
 }
-
 
 .about-grid {
   flex-grow: 1;
@@ -479,53 +470,97 @@ main p {
   gap: 4rem;
 }
 
+.about-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.about-text {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.about-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-photo {
+  max-width: 280px;
+  height: auto;
+  flex-shrink: 0;
+  border: 1px solid var(--ruby);
+  border-radius: 1rem;
+}
+
+.about-text-wrapper {
+  position: relative;
+  bottom: 1rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.capabilities-list {
+  list-style: none;
+  font-size: 1.125rem;
+}
+
+.capabilities-list li {
+  margin-bottom: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#about-contact {
+  position: relative;
+  top: 7rem;
+  margin-bottom: 16rem;
+}
+
 #big_title {
   position: relative;
+  bottom: 2.5rem;
+  margin-bottom: 0;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03em;
-  margin-bottom: 0rem;
-  bottom: 2.5rem;;
 }
 
-
-#big_title_contact {
+.big-title-contact {
   font-size: 4.5rem;
-  line-height: 1em;
-  font-weight: 900;
+  line-height: 1;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
+/* =========================================================
+   FOOTER
+========================================================= */
 
-
-
-/* Footer */
 .footer {
-  padding: -2rem 0;
   border-top: 1px solid var(--ruby-light);
 }
 
-.footer-links {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.keep-scrolling {
-  margin-bottom: 1rem;
-}
-
 .footer-copyright {
+  position: relative;
   overflow: hidden;
   white-space: nowrap;
-  position: relative;
 }
 
 .footer-repeat {
   display: inline-block;
   white-space: nowrap;
-  font-size: 6rem; /* supergroot */
+  font-size: 6rem;
   font-weight: 700;
   text-transform: uppercase;
   animation: scroll-left 30s linear infinite;
@@ -536,107 +571,253 @@ main p {
 }
 
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-50%); }
 }
 
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
 
+.cursor,
+.cursor2,
+.cursor3 {
+  position: fixed;
+  left: -100px;
+  top: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  .rotating-images {
-      grid-template-columns: repeat(4, 1fr);
+.cursor {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
+.cursor2,
+.cursor3 {
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: 0 0;
+}
+
+.cursor2.hover,
+.cursor3.hover {
+  width: 220px;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+  background-size: cover;
+}
+
+body.cursor-wolfverelst .cursor2,
+body.cursor-wolfverelst .cursor3 {
+  background-image: url('https://blijhuis.be/wolf/Jonas_Reubens-38.jpg');
+  border: 1px solid var(--ruby);
+}
+
+/* =========================================================
+   MOBILE
+   No scroll-linked animation.
+   Projects become compact swipe galleries, one project at a time.
+========================================================= */
+
+@media (max-width: 767px) {
+  :root {
+    --header-clearance: 7.1rem;
+  }
+
+  .container,
+  .current-projects-container {
+    padding-left: var(--page-gutter-mobile);
+    padding-right: var(--page-gutter-mobile);
+  }
+
+  .projects-body {
+    cursor: auto;
+  }
+
+  .nav {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .nav-links {
-      gap: 2rem;
+    gap: 1rem;
   }
-}
 
-@media (max-width: 767px) {
-  .container {
-      padding: 0 1rem;
+  .nav-logo {
+    font-size: 1.45rem;
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+  }
+
+  .hero-stage {
+    min-height: 100svh;
+  }
+
+  .slide {
+    height: min(55vh, 500px);
+    max-width: 84vw;
+  }
+
+  #pause-instruction {
+    padding-bottom: 1rem;
+    font-size: 0.68rem;
   }
 
   .current-projects-container {
+    padding-top: 3rem;
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
   }
 
-    .main-heading {
-      font-size: 1.5rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    .current-projects {
-      font-size: 1.4rem;
-      margin: 2rem 0;
-    }
-
-    .last-updated {
-      font-size: 1rem;
-      margin: 1rem 0;
-    }
-
-  .nav {
-      padding: 1rem;
-      flex-direction: column;
-      gap: 1rem;
+  .main-heading {
+    margin: 0 0 2rem;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
-  .nav-links {
-      gap: 1rem;
+  .current-projects {
+    margin: 0 0 2rem;
+    font-size: 1.4rem;
   }
 
-  .hero {
-      padding: 6rem 0 4rem;
+  .last-updated {
+    font-size: 1rem;
   }
 
-  .slideshow-container {
-      top: 40px;/* Aangepast formaat */
+  /* Kill the desktop scene mechanics completely on touch/mobile. */
+  .project-scene {
+    height: auto !important;
+    min-height: 0;
+    padding: 4.5rem 0 2rem;
   }
 
-  .rotating-images {
-      gap: 0.75rem;
+  .project-stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
 
-  .rotating-images img {
-      height: 8rem;
+  .project-copy-layer {
+    position: relative;
+    inset: auto;
+    order: 1;
+    display: block;
   }
 
-  .about-grid {
-      gap: 2rem;
+  .project-container {
+    padding: 0 var(--page-gutter-mobile) 1.5rem;
   }
 
-  .footer-top {
-      flex-direction: column;
-      text-align: center;
+  .project-title {
+    font-size: clamp(2rem, 11vw, 3.2rem);
+    line-height: 1;
   }
 
-  .footer-links {
-      justify-content: center;
+  .project-description {
+    font-size: 1rem;
   }
 
-  .footer-repeat {
-      flex-direction: column;
-      gap: 0.5rem;
+  .featured-project-undertext {
+    font-size: 1.05rem;
   }
+
+  .project-media-layer {
+    position: relative;
+    inset: auto;
+    order: 2;
+    overflow: visible;
+    pointer-events: auto;
+  }
+
+  .horizontal-scroll-wrapper {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    padding: 0 var(--page-gutter-mobile) 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--page-gutter-mobile);
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .horizontal-scroll {
+    position: relative;
+    inset: auto;
+    top: auto;
+    left: auto;
+    width: max-content;
+    gap: 0.75rem;
+    padding-right: 10vw;
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .project-media-item,
+  .project-media-item:nth-child(n) {
+    position: relative;
+    top: auto;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .project-media-item img {
+    width: 82vw;
+    height: clamp(300px, 58vh, 520px);
+    max-width: none;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  .mobile-gallery-hint {
+    display: block;
+    margin: 0;
+    padding: 0.25rem var(--page-gutter-mobile) 0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+  }
+
+  .project-index {
+    display: none;
+  }
+
+  .about {
+    margin-top: 4rem;
+  }
+
   .about-nav {
     display: none;
   }
 
   .about-layout {
+    width: 100%;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 100%;
   }
 
   .about-row {
@@ -645,19 +826,17 @@ main p {
     text-align: center;
   }
 
-  .about-text-wrapper {
-    text-align: center;
-  }
-
-  .about-grid {
-    align-items: center;
-    text-align: center;
-  }
-
+  .about-text-wrapper,
+  .about-grid,
   .about-text,
   .about-title,
   .capabilities-list {
     text-align: center;
+  }
+
+  .about-grid {
+    gap: 2rem;
+    align-items: center;
   }
 
   .capabilities-list {
@@ -667,58 +846,73 @@ main p {
   .capabilities-list li {
     list-style-position: inside;
   }
-}
 
-@media (max-width: 480px) {
-  .project-images img,
-  .project-hero-image {
-      height: 12rem;
+  #big_title {
+    font-size: 2rem;
   }
 
-  .project-hero-image {
-      height: 16rem;
+  .big-title-contact {
+    font-size: clamp(2.7rem, 14vw, 4.5rem);
+  }
+
+  .footer-repeat {
+    font-size: 3rem;
+  }
+
+  .cursor,
+  .cursor2,
+  .cursor3 {
+    display: none;
   }
 }
 
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-.cursor,
-.cursor2,
-.cursor3 {
-  position: fixed;
-  border-radius: 50%; 
-  transform: translateX(-50%) translateY(-50%);
-  pointer-events: none;
-  left: -100px;
-  top: 50%;
-  z-index: 9999;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .footer-repeat {
+    animation: none;
+  }
+
+  .nav-logo,
+  .link,
+  .nav-link,
+  .slideshow-container.expanded .slide.active {
+    transition: none;
+  }
+
+  /* Desktop fallback becomes a horizontal manual gallery too. */
+  .project-scene {
+    height: auto !important;
+    padding-block: 5rem;
+  }
+
+  .project-stage {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .project-copy-layer,
+  .project-media-layer {
+    position: relative;
+    inset: auto;
+  }
+
+  .horizontal-scroll-wrapper {
+    position: relative;
+    inset: auto;
+    overflow-x: auto;
+  }
+
+  .horizontal-scroll {
+    position: relative;
+    top: auto;
+    transform: none !important;
+  }
 }
-
-.cursor {
-  background-color: transparent;
-  height: 0;
-  width: 0;
-}
-
-.cursor2,
-.cursor3 {
-  height: 50px;
-  width: 50px;
-  background-position: center;
-  background-size: 0 0;
-}
-
-.cursor2.hover,
-.cursor3.hover {
-  height: 300px;
-  width: 220px;
-  border: none;
-  border-radius: 8px;
-  background-size: cover;
-}
-
-body.cursor-wolfverelst .cursor2,
-body.cursor-wolfverelst .cursor3 {
-  background-image: url('https://blijhuis.be/wolf/Jonas_Reubens-38.jpg'); /* Zorg dat dit een passende afbeelding is */
-  border: 1px solid var(--ruby);
-}
-

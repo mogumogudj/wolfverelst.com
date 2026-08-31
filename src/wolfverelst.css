@@ -418,6 +418,128 @@ a {
 .mobile-gallery-hint {
   display: none;
 }
+/* =========================================================
+   PROJECTS — BACK TO TOP BUTTON
+========================================================= */
+
+.projects-top-button {
+  position: fixed;
+
+  /* Sits OUTSIDE the project content on desktop */
+  left: max(
+    1rem,
+    calc((100vw - var(--page-max)) / 2 - 5.5rem)
+  );
+
+  top: 50%;
+  z-index: 900;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 66px;
+  height: 40px;
+  padding: 0 0.95rem;
+
+  border: 2px solid var(--ruby);
+  border-radius: 999px;
+
+  background: var(--sugar-milk);
+  color: var(--ruby);
+
+  /* Changed font */
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-50%) translateX(-10px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.projects-top-button.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(-50%) translateX(0);
+}
+
+.projects-top-button:hover {
+  background: var(--ruby);
+  color: var(--sugar-milk);
+}
+
+.projects-top-button:focus-visible {
+  outline: 2px solid var(--ruby);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1450px) {
+  .projects-top-button {
+    /* Keep it against the screen edge when there isn't
+       enough room beside the centered content */
+    left: 1rem;
+
+    min-width: 62px;
+    height: 38px;
+
+    padding: 0 0.85rem;
+    font-size: 0.76rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .projects-top-button {
+    /* Bottom-left is safer on mobile:
+       no overlap with project copy or swipe gallery */
+    left: 1rem;
+    right: auto;
+    top: auto;
+    bottom: 1rem;
+
+    min-width: 58px;
+    height: 38px;
+    padding: 0 0.8rem;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.03em;
+
+    transform: translateY(10px);
+  }
+
+  .projects-top-button.is-visible {
+    transform: translateY(0);
+  }
+}
 
 /* =========================================================
    ABOUT

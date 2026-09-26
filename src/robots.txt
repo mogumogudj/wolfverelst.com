@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: /src/flow.js
-Disallow: /src/wolfverelst.css
+Allow: /
+
+Sitemap: https://www.wolfverelst.com/sitemap.xml

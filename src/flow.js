@@ -231,6 +231,80 @@
     );
   }
 
+  const mobileGalleryQuery = window.matchMedia(
+    '(max-width: 767px)'
+  );
+  const galleryWrappers = Array.from(
+    document.querySelectorAll('.horizontal-scroll-wrapper')
+  );
+  let galleryResizeFrame = null;
+  const galleryScrollFrames = new WeakMap();
+
+  const updateGalleryHeight = (wrapper) => {
+    if (!mobileGalleryQuery.matches) {
+      wrapper.style.removeProperty('--gallery-height');
+      return;
+    }
+
+    const items = Array.from(
+      wrapper.querySelectorAll('.project-media-item')
+    );
+
+    if (!items.length) return;
+
+    const wrapperCenter =
+      wrapper.scrollLeft + wrapper.clientWidth / 2;
+
+    const activeItem = items.reduce((closest, item) => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const closestCenter =
+        closest.offsetLeft + closest.offsetWidth / 2;
+
+      return Math.abs(itemCenter - wrapperCenter) <
+        Math.abs(closestCenter - wrapperCenter)
+        ? item
+        : closest;
+    });
+
+    const media = activeItem.querySelector('img, video');
+    if (!media) return;
+
+    wrapper.style.setProperty(
+      '--gallery-height',
+      `${Math.ceil(media.getBoundingClientRect().height)}px`
+    );
+  };
+
+  const updateGalleryHeights = () => {
+    if (galleryResizeFrame !== null) return;
+
+    galleryResizeFrame = requestAnimationFrame(() => {
+      galleryResizeFrame = null;
+      galleryWrappers.forEach(updateGalleryHeight);
+    });
+  };
+
+  galleryWrappers.forEach((wrapper) => {
+    wrapper.addEventListener(
+      'scroll',
+      () => {
+        if (galleryScrollFrames.has(wrapper)) return;
+
+        const frame = requestAnimationFrame(() => {
+          galleryScrollFrames.delete(wrapper);
+          updateGalleryHeight(wrapper);
+        });
+        galleryScrollFrames.set(wrapper, frame);
+      },
+      { passive: true }
+    );
+  });
+
+  window.addEventListener('resize', updateGalleryHeights, {
+    passive: true
+  });
+  updateGalleryHeights();
+
 
   /* =========================================================
      WAYSIDE-STYLE PROJECT SCROLL
@@ -318,6 +392,15 @@
           ) *
           progress;
 
+        if (
+          metric.lastX !== undefined &&
+          Math.abs(x - metric.lastX) < 0.1
+        ) {
+          return;
+        }
+
+        metric.lastX = x;
+
 
         metric.track.style.setProperty(
           '--track-x',
@@ -330,9 +413,6 @@
 
 
   const measureProjectScenes = () => {
-
-    resetProjectScenes();
-
 
     /*
       IMPORTANT:
@@ -348,6 +428,7 @@
       !desktopMotion.matches ||
       !projectScenes.length
     ) {
+      resetProjectScenes();
       return;
     }
 
@@ -359,7 +440,7 @@
       window.innerHeight;
 
 
-    projectMetrics =
+    const measuredScenes =
       projectScenes
         .map((scene) => {
 
@@ -434,42 +515,44 @@
 
             );
 
+          const sceneHeight =
+            Math.round(
+              viewportHeight +
+              verticalTravel
+            );
 
           scene.style.setProperty(
 
             '--scene-height',
 
-            `${
-              Math.round(
-                viewportHeight +
-                verticalTravel
-              )
-            }px`
+            `${sceneHeight}px`
 
           );
 
-
           return {
 
+            scene,
             track,
 
             startX,
 
             endX,
 
-            top:
-              scene
-                .getBoundingClientRect()
-                .top +
-              window.scrollY,
-
             travel:
-              verticalTravel
+              verticalTravel,
 
           };
 
         })
         .filter(Boolean);
+
+    projectMetrics =
+      measuredScenes.map((metric) => ({
+        ...metric,
+        top:
+          metric.scene.getBoundingClientRect().top +
+          window.scrollY
+      }));
 
 
     updateProjectScenes();
@@ -1107,6 +1190,8 @@
 
     const animateCursor = () => {
 
+      cursorFrame = null;
+
       if (cursor) {
 
         cursor.style.left =
@@ -1171,11 +1256,16 @@
 
       }
 
+      const followersAreMoving =
+        Math.abs(mouseX - cursor2X) > 0.5 ||
+        Math.abs(mouseY - cursor2Y) > 0.5 ||
+        Math.abs(mouseX - cursor3X) > 0.5 ||
+        Math.abs(mouseY - cursor3Y) > 0.5;
 
-      cursorFrame =
-        requestAnimationFrame(
-          animateCursor
-        );
+      if (followersAreMoving) {
+        cursorFrame =
+          requestAnimationFrame(animateCursor);
+      }
 
     };
 
@@ -1193,7 +1283,7 @@
           event.clientY;
 
 
-        if (!cursorFrame) {
+        if (cursorFrame === null) {
 
           cursorFrame =
             requestAnimationFrame(

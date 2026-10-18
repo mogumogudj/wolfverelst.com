@@ -305,6 +305,49 @@
   });
   updateGalleryHeights();
 
+  const festivalGallery = document.querySelector(
+    '[aria-label="gemak! festival project gallery"] .horizontal-scroll-wrapper'
+  );
+
+  if (festivalGallery && 'IntersectionObserver' in window) {
+    const festivalVideos = Array.from(
+      festivalGallery.querySelectorAll('video')
+    );
+
+    festivalVideos.forEach((video) => {
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.autoplay = true;
+    });
+
+    const festivalVideoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
+            video.play().catch((error) => {
+              if (error.name !== 'AbortError') {
+                console.warn('Festival video could not autoplay:', error);
+              }
+            });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      {
+        root: festivalGallery,
+        threshold: [0, 0.25]
+      }
+    );
+
+    festivalVideos.forEach((video) =>
+      festivalVideoObserver.observe(video)
+    );
+  }
+
 
   /* =========================================================
      WAYSIDE-STYLE PROJECT SCROLL
